@@ -4,6 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffd000" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+/>
 
   <title>The Duck App</title>
 
@@ -781,46 +787,44 @@
 
       /* ---------- MOBILE FOOTER ---------- */
 
-      footer {
-        padding: 20px;
+footer {
+  width: 100%;
+  padding: 22px 16px;
+  overflow: hidden;
+}
 
-        overflow-x: auto;
-        overflow-y: hidden;
-      }
+.footer-inner {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
 
-      .footer-inner {
-        flex-direction: row;
+  width: 100%;
+  min-width: 0;
+  gap: 18px;
+}
 
-        align-items: center;
-        justify-content: space-between;
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 
-        flex-wrap: nowrap;
+  width: 100%;
+  gap: 12px 20px;
+}
 
-        width: max-content;
-        min-width: 100%;
+.footer-links a {
+  font-size: 9px;
+  white-space: nowrap;
+}
 
-        gap: 24px;
-      }
-
-      .footer-links {
-        flex-direction: row;
-        justify-content: flex-end;
-
-        flex-wrap: nowrap;
-
-        gap: 16px;
-      }
-
-      .footer-links a {
-        font-size: 9px;
-      }
-
-      .copyright {
-        font-size: 9px;
-        white-space: nowrap;
-      }
-
-    }
+.copyright {
+  font-size: 9px;
+  text-align: center;
+  white-space: normal;
+}
 
     /* =========================================================
        SHORT DESKTOP WINDOWS
