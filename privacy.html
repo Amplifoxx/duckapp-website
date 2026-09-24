@@ -1,73 +1,779 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Privacy Policy — The Duck App</title>
+<title>Privacy Policy — The Duck App</title>
+<meta name="description" content="Privacy Policy for The Duck App." />
 
-  <meta
-    name="description"
-    content="Privacy Policy for The Duck App."
-  />
+<style>
+:root {
+  --yellow: #ffd000;
+  --black: #050505;
+  --white: #f7f7f2;
+}
 
-  <link rel="stylesheet" href="styles.css" />
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 42px;
+  background: transparent;
+}
+
+.brand {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  position: relative;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 2px;
+  background: var(--black);
+  transition: width 180ms ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+  position: relative;
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 105px 8vw 42px;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--yellow);
+}
+
+/* =========================================================
+   BACKGROUND DUCK
+   ========================================================= */
+
+.background-duck {
+  position: absolute;
+  z-index: 0;
+  top: -100px;
+  left: 0;
+  width: max(80vw, 1100px);
+  transform: translate(-96%, -11%) rotate(-8deg);
+  opacity: 0.06;
+  pointer-events: none;
+  user-select: none;
+}
+
+.background-duck img {
+  display: block;
+  width: 200%;
+  height: auto;
+}
+
+/* =========================================================
+   GRADIENT
+   ========================================================= */
+
+.page-gradient {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(105,72,0,.30) 0%,
+    rgba(105,72,0,.15) 25%,
+    rgba(105,72,0,0) 50%,
+    rgba(105,72,0,.05) 75%,
+    rgba(105,72,0,.10) 100%
+  );
+  pointer-events: none;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.page-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.page-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 30px;
+}
+
+.page-heading .eyebrow {
+  margin-bottom: 12px;
+}
+
+.page-heading h1 {
+  font-size: clamp(50px, 5.2vw, 90px);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.085em;
+  margin-left: -0.065em;
+  text-transform: uppercase;
+}
+
+.updated {
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding-bottom: 4px;
+}
+
+/* =========================================================
+   INTRO BAR + CONTROLS
+   ========================================================= */
+
+.policy-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 26px;
+  margin-bottom: 12px;
+  background: var(--black);
+  color: var(--white);
+}
+
+.policy-intro-copy {
+  min-width: 0;
+}
+
+.policy-intro strong {
+  display: block;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.policy-intro p {
+  max-width: 650px;
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #bcbcbc;
+}
+
+.policy-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.policy-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 15px;
+  border: 1px solid rgba(255,255,255,.45);
+  background: transparent;
+  color: var(--white);
+  font: inherit;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease;
+}
+
+.policy-control:hover {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--black);
+}
+
+.policy-control:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   POLICY GRID
+   ========================================================= */
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  align-items: start;
+}
+
+.policy-item {
+  min-width: 0;
+  background: rgba(255,255,255,.30);
+  border: 1px solid rgba(0,0,0,.15);
+}
+
+.policy-item summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 59px;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.policy-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.policy-item summary:hover {
+  background: rgba(255,255,255,.22);
+}
+
+.policy-item summary:focus-visible {
+  outline: 3px solid var(--black);
+  outline-offset: -3px;
+}
+
+/* =========================================================
+   PLUS / MINUS ICON
+   ========================================================= */
+
+.plus {
+  position: relative;
+  display: block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.plus::before,
+.plus::after {
+  content: "";
+  position: absolute;
+  background: var(--black);
+  top: 7px;
+  left: 1px;
+  width: 14px;
+  height: 2px;
+}
+
+.plus::after {
+  transform: rotate(90deg);
+  transition: transform .15s;
+}
+
+.policy-item[open] .plus::after {
+  transform: rotate(0);
+}
+
+.policy-item[open] summary {
+  border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+/* =========================================================
+   EXPANDED TEXT
+   ========================================================= */
+
+.policy-copy {
+  padding: 18px 20px 22px;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.policy-copy p + p,
+.policy-copy p + ul,
+.policy-copy ul + p {
+  margin-top: 12px;
+}
+
+.policy-copy ul {
+  padding-left: 20px;
+}
+
+.policy-copy li + li {
+  margin-top: 6px;
+}
+
+.policy-copy a,
+.related a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.related {
+  margin-top: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  position: relative;
+  z-index: 10;
+  flex: 0 0 auto;
+  width: 100%;
+  margin-top: auto;
+  padding: 20px 8vw;
+  background: var(--black);
+  color: var(--white);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 24px;
+}
+
+.copyright {
+  flex: 0 0 auto;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: #777;
+  white-space: nowrap;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 28px;
+  white-space: nowrap;
+}
+
+.footer-links a {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #bcbcbc;
+  white-space: nowrap;
+}
+
+.footer-links a:hover {
+  color: var(--yellow);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .nav {
+    padding: 24px;
+  }
+
+  main {
+    padding: 105px 24px 42px;
+  }
+
+  .policy-intro {
+    flex-wrap: wrap;
+  }
+
+  .policy-controls {
+    justify-content: flex-start;
+  }
+
+  footer {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .footer-links {
+    gap: 18px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .nav {
+    padding: 22px 20px;
+  }
+
+  .brand {
+    font-size: 13px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 9px;
+  }
+
+  main {
+    padding: 100px 20px 40px;
+  }
+
+  .page-heading {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .page-heading h1 {
+    font-size: clamp(48px, 11vw, 70px);
+  }
+
+  .updated {
+    margin-top: 16px;
+  }
+
+  .policy-intro {
+    display: block;
+    padding: 20px;
+  }
+
+  .policy-controls {
+    margin-top: 18px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .policy-control {
+    flex: 1 1 auto;
+    padding: 0 12px;
+  }
+
+  .policy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .policy-item summary {
+    min-height: 54px;
+    padding: 15px 17px;
+  }
+
+  .policy-copy {
+    padding: 16px 17px 20px;
+  }
+
+  footer {
+    padding: 20px;
+    overflow-x: auto;
+  }
+
+  .footer-inner {
+    width: max-content;
+    min-width: 100%;
+  }
+
+  .footer-links {
+    gap: 16px;
+  }
+
+  .footer-links a,
+  .copyright {
+    font-size: 9px;
+  }
+}
+
+/* =========================================================
+   PRINT / SAVE AS PDF
+   ========================================================= */
+
+@media print {
+
+  @page {
+    margin: 18mm;
+  }
+
+  html,
+  body {
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  .nav,
+  .background-duck,
+  .page-gradient,
+  .policy-controls,
+  footer {
+    display: none !important;
+  }
+
+  main {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    background: white !important;
+    isolation: auto !important;
+  }
+
+  .page-content {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .page-heading {
+    margin-bottom: 22px;
+  }
+
+  .page-heading h1 {
+    font-size: 38pt;
+    line-height: 1;
+  }
+
+  .updated {
+    font-size: 9pt;
+  }
+
+  .policy-intro {
+    display: block;
+    padding: 12px 0;
+    margin-bottom: 20px;
+    background: white !important;
+    color: black !important;
+    border-top: 2px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  .policy-intro p {
+    color: black !important;
+  }
+
+  .policy-grid {
+    display: block !important;
+  }
+
+  .policy-item {
+    display: block !important;
+    margin-bottom: 18px;
+    background: white !important;
+    border: 0 !important;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .policy-item summary {
+    display: block !important;
+    min-height: 0;
+    padding: 0 0 8px;
+    border-bottom: 1px solid #999 !important;
+    font-size: 13pt;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .plus {
+    display: none !important;
+  }
+
+  /*
+    Print all policy content, even if the section is closed.
+    This does not change the on-screen accordion state.
+  */
+
+  .policy-item .policy-copy {
+    display: block !important;
+    padding: 10px 0 0;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  .policy-copy p,
+  .policy-copy li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .related {
+    margin-top: 24px;
+    padding-top: 12px;
+    border-top: 1px solid #999;
+  }
+
+  a {
+    color: black !important;
+  }
+}
+</style>
 </head>
 
-<body class="legal-page">
+<body>
 
-  <!-- NAV -->
-  <header class="nav legal-nav">
-    <a href="index.html" class="brand">THE DUCK APP</a>
+<header class="nav">
+  <a href="index.html" class="brand">THE DUCK APP</a>
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="support.html">Support</a>
-    </nav>
-  </header>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="support.html">Support</a>
+  </nav>
+</header>
 
+<main>
 
-  <main>
+  <div class="background-duck" aria-hidden="true">
+    <img src="assets/duck_official.svg" alt="" />
+  </div>
 
-    <!-- HERO -->
-    <section class="legal-hero">
+  <div class="page-gradient" aria-hidden="true"></div>
 
-      <div class="legal-watermark" aria-hidden="true">
-        <img src="./assets/duck_official.svg" alt="" />
+  <div class="page-content">
+
+    <div class="page-heading">
+      <div>
+        <p class="eyebrow">LEGAL</p>
+        <h1>PRIVACY<br />POLICY.</h1>
       </div>
 
-      <div class="legal-hero-content">
+      <p class="updated">Last updated September 2026</p>
+    </div>
 
-        <p class="eyebrow">
-          LEGAL
+    <!-- INTRO + EXPAND / COLLAPSE CONTROLS -->
+
+    <div class="policy-intro">
+
+      <div class="policy-intro-copy">
+        <strong>YOUR PRIVACY.</strong>
+
+        <p>
+          Select a topic below to read the full policy.
+          All sections remain available without leaving this page.
         </p>
+      </div>
 
-        <h1>
-          PRIVACY<br />
-          POLICY
-        </h1>
+      <div class="policy-controls" aria-label="Policy display controls">
 
-        <p class="legal-updated">
-          Last updated September 2026
-        </p>
+        <button
+          type="button"
+          class="policy-control"
+          id="expand-all"
+        >
+          EXPAND ALL +
+        </button>
+
+        <button
+          type="button"
+          class="policy-control"
+          id="collapse-all"
+        >
+          COLLAPSE ALL −
+        </button>
 
       </div>
 
-    </section>
+    </div>
 
+    <article class="policy-grid" aria-label="Privacy policy sections">
 
-    <!-- POLICY -->
-    <section class="legal-content">
+      <!-- INFORMATION WE COLLECT -->
 
-      <aside class="legal-sidebar">
-        THE DUCK APP
-      </aside>
+      <details class="policy-item">
+        <summary>
+          <span>Information We Collect</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
-      <article class="legal-document">
-
-        <section>
-          <h2>Information We Collect</h2>
-
+        <div class="policy-copy">
           <p>
             We may collect information that you provide directly,
             information created through your use of the service,
@@ -79,12 +785,18 @@
             The categories of information described below may vary
             depending on which features you choose to use.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- ACCOUNT INFORMATION -->
 
-        <section>
-          <h2>Account Information</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Account Information</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             When you create or maintain an account, we may collect
             information such as your email address, username, account
@@ -98,12 +810,18 @@
             authorize the provider to share with us, such as an
             account identifier, name, or email address.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- VEHICLE INFORMATION -->
 
-        <section>
-          <h2>Vehicle and License Plate Information</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Vehicle and License Plate Information</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             The service may allow users to provide or associate
             vehicle-related information with an account, including
@@ -126,12 +844,18 @@
             with accounts, facilitate gifting and related interactions,
             prevent misuse, and operate the service.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- QR CODES -->
 
-        <section>
-          <h2>QR Codes and Identifiers</h2>
+      <details class="policy-item">
+        <summary>
+          <span>QR Codes and Identifiers</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             The app may generate or process QR codes, account
             identifiers, vehicle identifiers, or similar codes used
@@ -143,12 +867,18 @@
             collection, or transaction information as necessary to
             provide the requested feature.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- COLLECTIONS -->
 
-        <section>
-          <h2>Collections and App Activity</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Collections and App Activity</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             We may collect and maintain information about your activity
             within the app, including ducks you own, duplicate ducks,
@@ -162,12 +892,18 @@
             app features, synchronize your collection, prevent fraud
             and abuse, and operate the virtual economy.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- PURCHASES -->
 
-        <section>
-          <h2>Purchases and Transactions</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Purchases and Transactions</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             We may maintain records relating to purchases, virtual
             currency, crates, virtual items, transaction status,
@@ -182,12 +918,18 @@
             payment-card, billing, or other financial information under
             their own privacy policies.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- GIFTING -->
 
-        <section>
-          <h2>Gifting and Trading</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Gifting and Trading</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             When you gift, receive, or trade an eligible virtual item,
             we may process information about the participants, virtual
@@ -201,12 +943,18 @@
             integrity, security, fraud prevention, dispute resolution,
             and operation of the service.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- PUBLIC INFORMATION -->
 
-        <section>
-          <h2>Public and Social Information</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Public and Social Information</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             Certain information may be visible to other users when you
             choose to participate in public or social features.
@@ -224,12 +972,18 @@
             usernames, profile fields, or other information intended
             to be publicly visible.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- CAMERA -->
 
-        <section>
-          <h2>Camera Access</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Camera Access</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             The app may request access to your device's camera for
             features such as scanning QR codes.
@@ -249,12 +1003,18 @@
             Privacy Policy and any required in-app disclosures will be
             updated as appropriate.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- NOTIFICATIONS -->
 
-        <section>
-          <h2>Notifications</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Notifications</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             If you enable notifications, we or our service providers
             may process device or notification identifiers needed to
@@ -267,12 +1027,18 @@
             You can control notification permissions through your
             device settings.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- TECHNICAL INFORMATION -->
 
-        <section>
-          <h2>Technical and Usage Information</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Technical and Usage Information</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             When you use the service, we and our service providers may
             automatically process technical information necessary to
@@ -286,66 +1052,47 @@
             error and crash information, diagnostic information, and
             interactions with app features.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- HOW WE USE INFORMATION -->
 
-        <section>
-          <h2>How We Use Information</h2>
+      <details class="policy-item">
+        <summary>
+          <span>How We Use Information</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             We may use information described in this Privacy Policy to:
           </p>
 
           <ul>
             <li>Create, authenticate, maintain, and secure accounts.</li>
-
-            <li>
-              Provide collections, gifting, trading, social, vehicle,
-              QR, purchase, and virtual-item features.
-            </li>
-
+            <li>Provide collections, gifting, trading, social, vehicle, QR, purchase, and virtual-item features.</li>
             <li>Process and fulfill transactions.</li>
-
-            <li>
-              Maintain Duck Bucks balances, collections, achievements,
-              and account history.
-            </li>
-
-            <li>
-              Identify, investigate, and prevent fraud, abuse, exploits,
-              unauthorized activity, and security threats.
-            </li>
-
-            <li>
-              Diagnose technical problems and maintain the reliability
-              of the service.
-            </li>
-
+            <li>Maintain Duck Bucks balances, collections, achievements, and account history.</li>
+            <li>Identify, investigate, and prevent fraud, abuse, exploits, unauthorized activity, and security threats.</li>
+            <li>Diagnose technical problems and maintain the reliability of the service.</li>
             <li>Provide customer support.</li>
-
-            <li>
-              Communicate service, security, account, or policy
-              information.
-            </li>
-
-            <li>
-              Understand and improve the functionality and performance
-              of the app.
-            </li>
-
+            <li>Communicate service, security, account, or policy information.</li>
+            <li>Understand and improve the functionality and performance of the app.</li>
             <li>Enforce our Terms of Use and other policies.</li>
-
-            <li>
-              Comply with applicable legal obligations and protect our
-              users, rights, property, and service.
-            </li>
+            <li>Comply with applicable legal obligations and protect our users, rights, property, and service.</li>
           </ul>
-        </section>
+        </div>
+      </details>
 
+      <!-- DISCLOSURE -->
 
-        <section>
-          <h2>How We Disclose Information</h2>
+      <details class="policy-item">
+        <summary>
+          <span>How We Disclose Information</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             We may disclose information when reasonably necessary to
             operate the service, including to service providers that
@@ -363,12 +1110,18 @@
             agreements, protect rights or safety, investigate fraud or
             abuse, or respond to lawful legal process.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- SERVICE PROVIDERS -->
 
-        <section>
-          <h2>Service Providers</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Service Providers</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             We may use third-party companies and services to operate
             portions of the app. These providers may process
@@ -384,12 +1137,18 @@
             privacy policies governing information they process
             independently from us.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- OTHER USERS -->
 
-        <section>
-          <h2>Other Users</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Other Users</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             Some app features necessarily involve sharing limited
             information with other users. For example, collection,
@@ -404,12 +1163,18 @@
             that user. We cannot control how another user independently
             uses information they receive outside the service.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- BUSINESS TRANSFERS -->
 
-        <section>
-          <h2>Business Transfers</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Business Transfers</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             If The Duck App is involved in a merger, acquisition,
             financing, reorganization, bankruptcy, sale of assets,
@@ -417,12 +1182,18 @@
             information may be transferred or disclosed as part of
             that transaction, subject to applicable law.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- LEGAL DISCLOSURES -->
 
-        <section>
-          <h2>Legal and Safety Disclosures</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Legal and Safety Disclosures</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             We may preserve, access, use, or disclose information when
             we reasonably believe doing so is necessary to comply with
@@ -432,12 +1203,18 @@
             or safety of The Duck App, our users, or others; or
             establish, exercise, or defend legal claims.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- RETENTION -->
 
-        <section>
-          <h2>Data Retention</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Data Retention</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             We retain information for as long as reasonably necessary
             to provide and secure the service, maintain your account,
@@ -459,12 +1236,18 @@
             dispose of it as appropriate and as required by applicable
             law.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- ACCOUNT DELETION -->
 
-        <section>
-          <h2>Account and Data Deletion</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Account and Data Deletion</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             You may request deletion of your account through the
             account deletion features made available by the app.
@@ -486,12 +1269,18 @@
             Information that has been lawfully anonymized or aggregated
             so that it no longer identifies you may also be retained.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- UNCLAIMED VEHICLE INFORMATION -->
 
-        <section>
-          <h2>Unclaimed Vehicle or Plate Information</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Unclaimed Vehicle or Plate Information</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             Certain vehicle or license plate identifiers may be
             submitted to the service by a user before the associated
@@ -508,12 +1297,18 @@
             access to, correction of, or deletion of personal
             information associated with them.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- YOUR CHOICES -->
 
-        <section>
-          <h2>Your Choices</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Your Choices</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             Depending on the feature and your location, you may be able
             to control certain information through account settings,
@@ -527,12 +1322,18 @@
             Revoking a permission may prevent features that depend on
             that permission from functioning.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- PRIVACY RIGHTS -->
 
-        <section>
-          <h2>Your Privacy Rights</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Your Privacy Rights</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             Depending on where you live, applicable law may provide
             rights concerning your personal information, which may
@@ -552,12 +1353,18 @@
             We will not discriminate against you for exercising privacy
             rights provided by applicable law.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- SECURITY -->
 
-        <section>
-          <h2>Security</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Security</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             We use reasonable administrative, technical, and
             organizational safeguards designed to protect information
@@ -572,12 +1379,18 @@
             account credentials and for notifying us if you believe
             your account has been compromised.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- CHILDREN -->
 
-        <section>
-          <h2>Children's Privacy</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Children's Privacy</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             The service is not intended to knowingly collect personal
             information from children in violation of applicable law.
@@ -590,12 +1403,18 @@
             delete or otherwise address the information as required by
             applicable law.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- INTERNATIONAL -->
 
-        <section>
-          <h2>International Use</h2>
+      <details class="policy-item">
+        <summary>
+          <span>International Use</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             The service and its providers may process or store
             information in countries other than the country in which
@@ -607,12 +1426,18 @@
             safeguards for transfers of personal information across
             jurisdictions.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- THIRD-PARTY SERVICES -->
 
-        <section>
-          <h2>Third-Party Services and Links</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Third-Party Services and Links</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             The service may contain links to or integrations with
             third-party services. This Privacy Policy does not govern
@@ -624,12 +1449,18 @@
             We encourage you to review the privacy policies of
             third-party services you choose to use.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- POLICY CHANGES -->
 
-        <section>
-          <h2>Changes to This Privacy Policy</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Changes to This Privacy Policy</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             We may update this Privacy Policy as the service, our data
             practices, applicable law, or our business changes.
@@ -647,19 +1478,23 @@
             personal information, we will request that consent rather
             than relying solely on an update to this Privacy Policy.
           </p>
-        </section>
+        </div>
+      </details>
 
+      <!-- CONTACT -->
 
-        <section>
-          <h2>Contact Us</h2>
+      <details class="policy-item">
+        <summary>
+          <span>Contact Us</span>
+          <span class="plus" aria-hidden="true"></span>
+        </summary>
 
+        <div class="policy-copy">
           <p>
             If you have questions, concerns, or requests regarding this
             Privacy Policy or our privacy practices, you may contact us
             through our
-            <a class="legal-inline-link" href="support.html">
-              Contact &amp; Support
-            </a>
+            <a href="support.html">Contact &amp; Support</a>
             page.
           </p>
 
@@ -668,41 +1503,95 @@
             The Duck App will be provided before the app is made
             publicly available.
           </p>
-        </section>
-
-
-        <div class="legal-related">
-          Please also review our
-          <a href="terms.html">Terms of Use</a>
-          and
-          <a href="purchase-terms.html">Purchase Terms</a>.
         </div>
+      </details>
 
-      </article>
+    </article>
 
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer>
-
-    <div class="footer-brand">
-      THE DUCK APP
+    <div class="related">
+      Please also review our
+      <a href="terms.html">Terms of Use</a>
+      and
+      <a href="purchase-terms.html">Purchase Terms</a>.
     </div>
 
-    <div class="footer-links">
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
 
     <div class="copyright">
       © 2026 Michael Overton. All rights reserved.
     </div>
 
-  </footer>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="support.html">Support</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="purchase-terms.html">Purchase Terms</a>
+    </nav>
+
+  </div>
+</footer>
+
+<script>
+  /* =========================================================
+     EXPAND ALL / COLLAPSE ALL
+     ========================================================= */
+
+  const policySections = document.querySelectorAll(
+    ".policy-grid .policy-item"
+  );
+
+  document
+    .getElementById("expand-all")
+    .addEventListener("click", function () {
+      policySections.forEach(function (section) {
+        section.open = true;
+      });
+    });
+
+  document
+    .getElementById("collapse-all")
+    .addEventListener("click", function () {
+      policySections.forEach(function (section) {
+        section.open = false;
+      });
+    });
+
+  /* =========================================================
+     PRINT / SAVE AS PDF
+
+     Temporarily expand every section before printing.
+     Restore the original open/closed state afterward.
+     ========================================================= */
+
+  let originalSectionStates = null;
+
+  window.addEventListener("beforeprint", function () {
+    originalSectionStates = Array.from(
+      policySections,
+      function (section) {
+        return section.open;
+      }
+    );
+
+    policySections.forEach(function (section) {
+      section.open = true;
+    });
+  });
+
+  window.addEventListener("afterprint", function () {
+    if (!originalSectionStates) return;
+
+    policySections.forEach(function (section, index) {
+      section.open = originalSectionStates[index];
+    });
+
+    originalSectionStates = null;
+  });
+</script>
 
 </body>
 </html>

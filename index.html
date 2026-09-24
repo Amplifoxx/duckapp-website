@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,190 +9,1148 @@
 
   <meta
     name="description"
-    content="Collect ducks. Build your vehicle. Pass a duck along. The Duck App brings ducking into the digital world."
+    content="Collect ducks. Trade ducks. Win rewards. The Duck App brings ducking into the digital world."
   />
 
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+
+    /* =========================================================
+       THE DUCK APP — HOMEPAGE
+       ========================================================= */
+
+    :root {
+      --yellow: #ffd000;
+      --black: #050505;
+      --white: #f7f7f2;
+    }
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      min-height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+
+      display: flex;
+      flex-direction: column;
+
+      background: var(--yellow);
+      color: var(--black);
+
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================================
+       MAIN LAYOUT
+       ========================================================= */
+
+    main {
+      flex: 1 0 auto;
+
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+      min-height: 0;
+    }
+
+    /* =========================================================
+       NAVIGATION
+       ========================================================= */
+
+    .nav {
+      position: absolute;
+      z-index: 100;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 28px 42px;
+    }
+
+    .brand {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      position: relative;
+
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 2px;
+
+      background: var(--black);
+
+      transition: width 180ms ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      position: relative;
+
+      flex: 1 0 auto;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: flex-start;
+      justify-content: center;
+
+      width: 100%;
+      min-width: 0;
+
+      padding: 130px 8vw 0;
+
+      background: var(--yellow);
+
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    /* =========================================================
+       BACKGROUND DUCK
+       ========================================================= */
+
+    .hero-duck {
+      position: absolute;
+      z-index: 0;
+
+      top: 0;
+      left: 0;
+      right: auto;
+
+      width: max(80vw, 1100px);
+
+      transform: translate(-96%, -11%) rotate(-8deg);
+      transform-origin: center center;
+
+      opacity: 0.060;
+
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .hero-duck img {
+      display: block;
+
+      width: 200%;
+      height: auto;
+    }
+
+    /* =========================================================
+       HERO GRADIENT — RIGHT TO LEFT
+       ========================================================= */
+
+    .hero-gradient {
+      position: absolute;
+      z-index: 1;
+
+      inset: 0;
+
+      background: linear-gradient(
+        to left,
+        rgba(105, 72, 0, 0.30) 0%,
+        rgba(105, 72, 0, 0.15) 25%,
+        rgba(105, 72, 0, 0.00) 50%,
+        rgba(105, 72, 0, 0.05) 75%,
+        rgba(105, 72, 0, 0.10) 100%
+      );
+
+      pointer-events: none;
+    }
+
+    /* =========================================================
+       HERO CONTENT
+       ========================================================= */
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      width: 56%;
+      max-width: none;
+      min-width: 0;
+
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .eyebrow {
+      margin-bottom: 24px;
+
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+    }
+
+    .hero h1 {
+      font-size: clamp(46px, 6.1vw, 180px);
+      font-weight: 900;
+
+      line-height: 0.9;
+      letter-spacing: -0.085em;
+
+      margin-left: -0.065em;
+
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* =========================================================
+       ASTERISK — SCALES WITH HEADLINE
+       ========================================================= */
+
+    .rewards-line {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .asterisk {
+  display: inline-block;
+  position: relative;
+
+  top: -1.3em;
+  margin-left: -0.4em;
+
+  font-size: 0.35em;
+  line-height: 0;
+  letter-spacing: 0;
+
+  vertical-align: baseline;
+}
+
+    /* =========================================================
+       PHONE SCREENSHOT
+       ========================================================= */
+
+    .hero-phone {
+      position: absolute;
+      z-index: 2;
+
+      right: -6vw;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      width: 64vw;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-phone img {
+      display: block;
+
+      width: auto;
+      height: auto;
+
+      max-width: 100%;
+
+      max-height: min(
+        850px,
+        calc(100svh - 150px)
+      );
+
+      object-fit: contain;
+    }
+
+    /* =========================================================
+       HERO BUTTONS
+       ========================================================= */
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap: 10px;
+      margin-top: 38px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 13px;
+
+      width: auto;
+      height: 52px;
+
+      flex-shrink: 0;
+
+      padding: 0 18px 0 28px;
+
+      background: var(--black);
+      color: var(--white);
+
+      border: 2px solid var(--black);
+
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+
+      white-space: nowrap;
+
+      transition:
+        background 180ms ease,
+        color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .button-icon {
+      display: block;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================
+       APPLE LOGO — INDEPENDENT CONTROLS
+       ========================================================= */
+
+    .apple-icon {
+      width: 28px;
+      height: 28px;
+
+      margin-left: 2px;
+
+      transform: translateY(-1px);
+    }
+
+    /* =========================================================
+       INSTAGRAM LOGO — INDEPENDENT CONTROLS
+       ========================================================= */
+
+    .instagram-icon {
+      width: 22px;
+      height: 22px;
+
+      margin-left: 2px;
+
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       BUTTON INTERACTIONS
+       ========================================================= */
+
+    .button:hover {
+      background: transparent;
+      color: var(--black);
+
+      transform: translateY(0);
+    }
+
+    .button:focus-visible {
+      outline: 2px solid var(--black);
+      outline-offset: 3px;
+    }
+
+    /* =========================================================
+       REWARDS DISCLAIMER
+       ========================================================= */
+
+    .rewards-disclaimer {
+      position: relative;
+      z-index: 5;
+
+      width: 100%;
+
+      margin-top: auto;
+
+      padding: 50px 0 8px;
+
+      background: transparent;
+      text-align: center;
+    }
+
+    .rewards-disclaimer p {
+      max-width: 1200px;
+      margin: 0 auto;
+
+      font-size: 8px;
+      font-weight: 600;
+      line-height: 1.6;
+      letter-spacing: 0.015em;
+
+      color: rgba(0, 0, 0, 0.62);
+    }
+
+    .rewards-disclaimer a {
+      font-weight: 800;
+
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .rewards-disclaimer a:hover {
+      color: var(--black);
+    }
+
+    /* =========================================================
+       FOOTER — SINGLE ROW
+       ========================================================= */
+
+    footer {
+      position: relative;
+      z-index: 10;
+
+      flex: 0 0 auto;
+      margin-top: auto;
+
+      width: 100%;
+
+      padding: 24px 8vw;
+
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: row;
+
+      align-items: center;
+      justify-content: space-between;
+
+      flex-wrap: nowrap;
+
+      width: 100%;
+      gap: 24px;
+    }
+
+    .copyright {
+      flex: 0 0 auto;
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: 0.03em;
+
+      color: #777;
+
+      white-space: nowrap;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: row;
+
+      align-items: center;
+      justify-content: flex-end;
+
+      flex-wrap: nowrap;
+      flex: 0 0 auto;
+
+      gap: 28px;
+
+      white-space: nowrap;
+    }
+
+    .footer-links a {
+      flex-shrink: 0;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      color: #bcbcbc;
+
+      white-space: nowrap;
+
+      transition: color 150ms ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--yellow);
+    }
+
+    /* =========================================================
+       ULTRAWIDE DESKTOP
+       ========================================================= */
+
+    @media (min-width: 2401px) {
+
+      .hero-content {
+        width: 56%;
+        max-width: none;
+      }
+
+      .hero h1 {
+        font-size: clamp(110px, 6.1vw, 180px);
+        white-space: nowrap;
+      }
+
+      .hero-phone {
+        right: -6vw;
+        width: 64vw;
+      }
+
+    }
+
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
+    @media (max-width: 900px) {
+
+      .nav {
+        padding: 24px;
+      }
+
+      .hero {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .hero-content {
+        width: 53%;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 6vw, 70px);
+      }
+
+      .hero .eyebrow {
+        font-size: 13px;
+      }
+
+      .hero-duck {
+        top: 0;
+        left: 0;
+        right: auto;
+
+        width: max(100vw, 1100px);
+      }
+
+      .hero-phone {
+        right: 0;
+        top: 50%;
+        bottom: auto;
+
+        transform: translateY(-50%);
+
+        width: 46vw;
+      }
+
+      .hero-phone img {
+        max-height: calc(100svh - 150px);
+      }
+
+      .rewards-disclaimer {
+        padding-bottom: 24px;
+      }
+
+      footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .footer-links {
+        gap: 20px;
+      }
+
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 600px) {
+
+      /* Hide scrollbar indicators while keeping scrolling enabled */
+
+      html,
+      body {
+        overflow-x: hidden;
+        scrollbar-width: none;
+      }
+
+      html::-webkit-scrollbar,
+      body::-webkit-scrollbar,
+      footer::-webkit-scrollbar {
+        display: none;
+      }
+
+      footer {
+        scrollbar-width: none;
+      }
+
+      .nav {
+        padding: 22px 20px;
+      }
+
+      .brand {
+        font-size: 13px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 9px;
+      }
+
+      /* ---------- MOBILE HERO ---------- */
+
+      .hero {
+        flex: 1 0 auto;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        padding: 150px 20px 0;
+
+        overflow: hidden;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 4;
+
+        width: 100%;
+        max-width: none;
+
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .hero .eyebrow {
+        font-size: 13px;
+        margin-bottom: 22px;
+      }
+
+      .hero h1 {
+        font-size: clamp(44px, 11vw, 75px);
+
+        line-height: 0.92;
+        letter-spacing: -0.075em;
+
+        white-space: nowrap;
+      }
+
+      /* ---------- MOBILE BUTTONS ---------- */
+
+      .hero-buttons {
+        align-items: flex-start;
+        gap: 10px;
+
+        margin-top: 32px;
+      }
+
+      .button {
+        width: auto;
+        max-width: 290px;
+        height: 54px;
+
+        padding: 0 18px;
+
+        font-size: 10px;
+        gap: 10px;
+      }
+
+      .apple-icon {
+        width: 25px;
+        height: 25px;
+      }
+
+      .instagram-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* ---------- MOBILE BACKGROUND DUCK ---------- */
+
+      .hero-duck {
+        top: 0;
+        left: 0;
+        right: auto;
+
+        width: max(100vw, 600px);
+      }
+
+      /* ---------- MOBILE PHONE ---------- */
+
+      .hero-phone {
+        position: relative;
+        z-index: 2;
+
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+
+        transform: none;
+
+        width: 100%;
+
+        margin-top: 35px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-phone img {
+        display: block;
+
+        width: 100%;
+        height: auto;
+
+        max-width: 720px;
+        max-height: none;
+
+        object-fit: contain;
+      }
+
+      /* ---------- MOBILE DISCLAIMER ---------- */
+
+      .rewards-disclaimer {
+        width: 100%;
+
+        margin-top: auto;
+
+        padding: 50px 0 24px;
+
+        text-align: center;
+      }
+
+      .rewards-disclaimer p {
+        font-size: 10px;
+        line-height: 1.6;
+      }
+
+      /* ---------- MOBILE FOOTER ---------- */
+
+      footer {
+        padding: 20px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+
+      .footer-inner {
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: space-between;
+
+        flex-wrap: nowrap;
+
+        width: max-content;
+        min-width: 100%;
+
+        gap: 24px;
+      }
+
+      .footer-links {
+        flex-direction: row;
+        justify-content: flex-end;
+
+        flex-wrap: nowrap;
+
+        gap: 16px;
+      }
+
+      .footer-links a {
+        font-size: 9px;
+      }
+
+      .copyright {
+        font-size: 9px;
+        white-space: nowrap;
+      }
+
+    }
+
+    /* =========================================================
+       SHORT DESKTOP WINDOWS
+       ========================================================= */
+
+    @media (min-width: 601px) and (max-height: 700px) {
+
+      .hero {
+        padding-top: 110px;
+      }
+
+      .hero-phone {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .hero-phone img {
+        max-height: min(
+          620px,
+          calc(100svh - 120px)
+        );
+      }
+
+      .hero h1 {
+        font-size: clamp(40px, 5.5vw, 100px);
+      }
+
+    }
+
+    /* =========================================================
+       MOBILE HOMEPAGE REFINEMENTS
+       ========================================================= */
+
+    @media (max-width: 600px) {
+
+      .hero {
+        padding: 122px 20px 0;
+        align-items: center;
+      }
+
+      .hero-content {
+        width: 100%;
+        max-width: 430px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+      }
+
+      .hero .eyebrow {
+        font-size: clamp(10px, 2.8vw, 13px);
+        letter-spacing: 0.15em;
+        margin-bottom: 22px;
+      }
+
+      .hero h1 {
+        font-size: clamp(39px, 10.3vw, 62px);
+        letter-spacing: -0.08em;
+        line-height: 0.94;
+        white-space: nowrap;
+      }
+
+      /* ---------- CENTERED MOBILE BUTTONS ---------- */
+
+      .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        max-width: 430px;
+
+        gap: 10px;
+        margin: 34px auto 0;
+      }
+
+      .hero-buttons .button {
+        position: relative;
+
+        width: 88%;
+        max-width: 340px;
+        height: 56px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 14px;
+        padding: 0 16px;
+
+        font-size: 11px;
+        text-align: center;
+      }
+
+      /* Download spacing only */
+
+      .hero-buttons .button:first-child {
+        gap: 4px;
+      }
+
+      /* Text and icon stay together */
+
+      .hero-buttons .button span {
+        width: auto;
+        text-align: center;
+      }
+
+      .hero-buttons .button-icon {
+        position: static;
+        margin-left: 0;
+        flex-shrink: 0;
+      }
+
+      /* ---------- MOBILE PHONE ---------- */
+
+      .hero-phone {
+        width: calc(100% + 100px);
+        max-width: 500px;
+
+        margin-top: -50px;
+        margin-left: -50px;
+        margin-right: -50px;
+      }
+
+      .hero-phone img {
+        width: 100%;
+        max-width: 550px;
+        max-height: none;
+      }
+
+      .rewards-disclaimer {
+        padding: 36px 0 24px;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
+  <!-- =====================================================
+       NAVIGATION
+       ===================================================== -->
+
   <header class="nav">
-    <a href="/" class="brand">THE DUCK APP</a>
+
+    <a href="/" class="brand">
+      THE DUCK APP
+    </a>
 
     <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
       <a href="support.html">Support</a>
     </nav>
+
   </header>
 
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
 
-  <!-- HERO -->
   <main>
 
     <section class="hero">
 
+      <!-- LARGE BACKGROUND DUCK -->
+
       <div class="hero-duck" aria-hidden="true">
-  <img src="assets/duck_official.svg" alt="" />
-</div>
+
+        <img
+          src="assets/duck_official.svg"
+          alt=""
+        />
+
+      </div>
+
+      <!-- HERO GRADIENT -->
+
+      <div
+        class="hero-gradient"
+        aria-hidden="true"
+      ></div>
+
+      <!-- HERO COPY -->
 
       <div class="hero-content">
 
         <p class="eyebrow">
-          DUCKING, REIMAGINED.
+          DIGITAL DUCK COLLECTING GAME
         </p>
 
         <h1>
-          THE<br />
-          DUCK<br />
-          APP
+          Collect.<br />
+          Trade.<br />
+          <span class="rewards-line">Win Rewards.<span class="asterisk">*</span></span>
         </h1>
 
-        <p class="hero-copy">
-          Collect ducks. Build your vehicle.<br />
-          Pass a duck along.
-        </p>
+        <!-- HERO BUTTONS -->
 
-        <a href="#about" class="button">
-          DISCOVER THE APP
-        </a>
+        <div class="hero-buttons">
 
-      </div>
+          <!-- APPLE / iOS -->
 
-    </section>
+          <a
+            href="#"
+            class="button"
+            aria-label="Download The Duck App for iOS"
+          >
 
+            <span>DOWNLOAD</span>
 
-    <!-- ABOUT -->
-    <section class="section section-dark" id="about">
+            <svg
+              class="button-icon apple-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M17.05 12.54c.02 2.1 1.84 2.8 1.86 2.81-.02.05-.29 1-.96 1.98-.58.85-1.18 1.7-2.13 1.72-.93.02-1.23-.55-2.3-.55-1.06 0-1.4.53-2.28.57-.92.03-1.62-.93-2.2-1.78-1.2-1.73-2.12-4.9-.89-7.03a3.4 3.4 0 0 1 2.87-1.75c.9-.02 1.74.6 2.3.6.55 0 1.6-.75 2.7-.64.46.02 1.76.19 2.59 1.4-.07.04-1.55.9-1.56 2.67ZM15.3 6.3c.49-.59.82-1.4.73-2.2-.7.03-1.54.46-2.04 1.05-.45.52-.85 1.34-.74 2.13.78.06 1.57-.4 2.05-.98Z"/>
+            </svg>
 
-      <div class="section-number">
-        01
-      </div>
+          </a>
 
-      <div class="section-content">
+          <!-- INSTAGRAM -->
 
-        <p class="eyebrow yellow">
-          THE TRADITION, DIGITAL.
-        </p>
+          <a
+            href="#"
+            class="button"
+            aria-label="Follow The Duck App on Instagram"
+          >
 
-        <h2>
-          YOUR DUCKS.<br />
-          YOUR COLLECTION.
-        </h2>
+            <span>FOLLOW OUR INSTAGRAM</span>
 
-        <p class="large-copy">
-          The Duck App brings ducking into the digital world.
-          Collect unique digital ducks, grow your collection,
-          and share them with other members of the community.
-        </p>
+            <svg
+              class="button-icon instagram-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
 
-      </div>
+              <rect
+                x="2"
+                y="2"
+                width="20"
+                height="20"
+                rx="5"
+              />
 
-    </section>
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+              />
 
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="1"
+                fill="currentColor"
+                stroke="none"
+              />
 
-    <!-- FEATURES -->
-    <section class="section section-light" id="features">
+            </svg>
 
-      <div class="section-number">
-        02
-      </div>
-
-      <div class="section-content">
-
-        <p class="eyebrow">
-          BUILD YOUR COLLECTION.
-        </p>
-
-        <h2>
-          OPEN.<br />
-          COLLECT.<br />
-          TRADE.
-        </h2>
-
-        <div class="feature-grid">
-
-          <article class="feature">
-            <span>01</span>
-            <h3>COLLECT</h3>
-            <p>
-              Discover uniquely designed ducks ranging from
-              Common to Legendary and build a collection that's
-              entirely your own.
-            </p>
-          </article>
-
-          <article class="feature">
-            <span>02</span>
-            <h3>GIFT & TRADE</h3>
-            <p>
-              Send ducks to friends and other owners.
-              Grow your collection through the community.
-            </p>
-          </article>
-
-          <article class="feature">
-            <span>03</span>
-            <h3>CUSTOMIZE</h3>
-            <p>
-              Build a digital version of your vehicle with
-              customizable models, colors, trims, tops and more.
-            </p>
-          </article>
+          </a>
 
         </div>
 
       </div>
 
-    </section>
+      <!-- APP SCREENSHOT -->
 
+      <div class="hero-phone">
 
-    <!-- CTA -->
-    <section class="cta">
+        <img
+          src="assets/iphone/iphone-display-1.png"
+          alt="The Duck App showing a duck collection and customized vehicle"
+        />
 
-      <p class="eyebrow">
-        YOUR COLLECTION STARTS HERE.
-      </p>
-
-      <h2>
-        READY TO<br />
-        GET DUCKED?
-      </h2>
-
-      <p>
-        The Duck App is coming soon.
-      </p>
-
-      <div class="coming-soon">
-        COMING SOON TO THE APP STORE
       </div>
+
+      <!-- REWARDS DISCLAIMER -->
+
+      <aside
+        class="rewards-disclaimer"
+        aria-label="Rewards disclaimer"
+      >
+
+        <p>
+          *In-game rewards have no cash value, cannot be redeemed for cash,
+          and are subject to availability, eligibility, modification, or
+          discontinuation under our
+          <a href="terms.html">Terms of Use</a>.
+        </p>
+
+      </aside>
 
     </section>
 
   </main>
 
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
 
-  <!-- FOOTER -->
   <footer>
 
-    <div class="footer-brand">
-      THE DUCK APP
-    </div>
+    <div class="footer-inner">
 
-    <div class="footer-links">
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-    </div>
+      <div class="copyright">
+        © 2026 Michael Overton. All rights reserved.
+      </div>
 
-    <div class="copyright">
-      © 2026 Michael Overton. All rights reserved.
+      <nav class="footer-links" aria-label="Footer navigation">
+
+        <a href="support.html">Support</a>
+
+        <a href="privacy.html">Privacy</a>
+
+        <a href="terms.html">Terms</a>
+
+        <a href="purchase-terms.html">Purchase Terms</a>
+
+      </nav>
+
     </div>
 
   </footer>
-
 
   <script src="script.js"></script>
 
