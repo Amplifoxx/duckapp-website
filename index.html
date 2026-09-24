@@ -3,23 +3,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  />
-
-  <meta
-    name="theme-color"
-    content="#050505"
-    media="(prefers-color-scheme: light)"
-  />
-  <meta
-    name="theme-color"
-    content="#050505"
-    media="(prefers-color-scheme: dark)"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#050505" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#050505" media="(prefers-color-scheme: dark)" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
@@ -31,22 +17,12 @@
   />
 
   <style>
-
-    /* =========================================================
-       THE DUCK APP — HOMEPAGE
-       ========================================================= */
-
     :root {
       --yellow: #ffd000;
       --black: #050505;
       --white: #f7f7f2;
-
       color-scheme: dark;
     }
-
-    /* =========================================================
-       RESET
-       ========================================================= */
 
     * {
       box-sizing: border-box;
@@ -63,13 +39,10 @@
     body {
       min-height: 100vh;
       min-height: 100svh;
-
       display: flex;
       flex-direction: column;
-
       background: var(--yellow);
       color: var(--black);
-
       font-family: Arial, Helvetica, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
@@ -79,37 +52,25 @@
       text-decoration: none;
     }
 
-    /* =========================================================
-       MAIN LAYOUT
-       ========================================================= */
-
     main {
       flex: 1 0 auto;
-
       display: flex;
       flex-direction: column;
-
       width: 100%;
       min-height: 0;
     }
 
-    /* =========================================================
-       NAVIGATION
-       ========================================================= */
+    /* NAVIGATION */
 
     .nav {
       position: absolute;
       z-index: 100;
-
       top: 0;
       left: 0;
-
       width: 100%;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       padding: 28px 42px;
     }
 
@@ -126,7 +87,6 @@
 
     .nav-links a {
       position: relative;
-
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.12em;
@@ -135,16 +95,12 @@
 
     .nav-links a::after {
       content: "";
-
       position: absolute;
       left: 0;
       bottom: -7px;
-
       width: 0;
       height: 2px;
-
       background: var(--black);
-
       transition: width 180ms ease;
     }
 
@@ -152,72 +108,51 @@
       width: 100%;
     }
 
-    /* =========================================================
-       HERO
-       ========================================================= */
+    /* HERO */
 
     .hero {
       position: relative;
-
       flex: 1 0 auto;
-
       display: flex;
       flex-direction: column;
-
       align-items: flex-start;
       justify-content: center;
-
       width: 100%;
       min-width: 0;
-
       padding: 130px 8vw 0;
-
       background: var(--yellow);
-
       overflow: hidden;
       isolation: isolate;
     }
 
-    /* =========================================================
-       BACKGROUND DUCK
-       ========================================================= */
+    /* BACKGROUND DUCK */
 
     .hero-duck {
       position: absolute;
       z-index: 0;
-
       top: 0;
       left: 0;
       right: auto;
-
       width: max(80vw, 1100px);
-
       transform: translate(-96%, -11%) rotate(-8deg);
       transform-origin: center center;
-
       opacity: 0.060;
-
       user-select: none;
       pointer-events: none;
     }
 
     .hero-duck img {
       display: block;
-
       width: 200%;
       height: auto;
     }
 
-    /* =========================================================
-       HERO GRADIENT — RIGHT TO LEFT
-       ========================================================= */
+    /* HERO GRADIENT */
 
     .hero-gradient {
       position: absolute;
       z-index: 1;
-
       inset: 0;
-
       background: linear-gradient(
         to left,
         rgba(105, 72, 0, 0.30) 0%,
@@ -226,50 +161,42 @@
         rgba(105, 72, 0, 0.05) 75%,
         rgba(105, 72, 0, 0.10) 100%
       );
-
       pointer-events: none;
     }
 
-    /* =========================================================
-       HERO CONTENT
-       ========================================================= */
+    /* HERO CONTENT */
 
     .hero-content {
       position: relative;
       z-index: 2;
-
       width: 56%;
       max-width: none;
       min-width: 0;
-
       margin-top: auto;
       margin-bottom: auto;
     }
 
     .eyebrow {
       margin-bottom: 24px;
-
       font-size: 22px;
       font-weight: 800;
       letter-spacing: 0.18em;
     }
 
+    /* UPDATED: HEAVIER HEADLINE FONT */
+
     .hero h1 {
+      font-family: "Arial Black", Arial, Helvetica, sans-serif;
       font-size: clamp(46px, 6.1vw, 180px);
       font-weight: 900;
-
       line-height: 0.9;
       letter-spacing: -0.085em;
-
       margin-left: -0.065em;
-
       text-transform: uppercase;
       white-space: nowrap;
     }
 
-    /* =========================================================
-       ASTERISK — SCALES WITH HEADLINE
-       ========================================================= */
+    /* ASTERISK */
 
     .rewards-line {
       display: inline-block;
@@ -279,65 +206,45 @@
     .asterisk {
       display: inline-block;
       position: relative;
-
       top: -1.3em;
       margin-left: -0.4em;
-
       font-size: 0.35em;
       line-height: 0;
       letter-spacing: 0;
-
       vertical-align: baseline;
     }
 
-    /* =========================================================
-       PHONE SCREENSHOT
-       ========================================================= */
+    /* PHONE SCREENSHOT */
 
     .hero-phone {
       position: absolute;
       z-index: 2;
-
       right: -6vw;
       top: 50%;
-
       transform: translateY(-50%);
-
       width: 64vw;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       pointer-events: none;
       user-select: none;
     }
 
     .hero-phone img {
       display: block;
-
       width: auto;
       height: auto;
-
       max-width: 100%;
-
-      max-height: min(
-        850px,
-        calc(100svh - 150px)
-      );
-
+      max-height: min(850px, calc(100svh - 150px));
       object-fit: contain;
     }
 
-    /* =========================================================
-       HERO BUTTONS
-       ========================================================= */
+    /* HERO BUTTONS */
 
     .hero-buttons {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-
       gap: 10px;
       margin-top: 38px;
     }
@@ -346,27 +253,18 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
       gap: 13px;
-
       width: auto;
       height: 52px;
-
       flex-shrink: 0;
-
       padding: 0 18px 0 28px;
-
       background: var(--black);
       color: var(--white);
-
       border: 2px solid var(--black);
-
       font-size: 12px;
       font-weight: 900;
       letter-spacing: 0.12em;
-
       white-space: nowrap;
-
       transition:
         background 180ms ease,
         color 180ms ease,
@@ -378,40 +276,23 @@
       flex-shrink: 0;
     }
 
-    /* =========================================================
-       APPLE LOGO — INDEPENDENT CONTROLS
-       ========================================================= */
-
     .apple-icon {
       width: 28px;
       height: 28px;
-
       margin-left: 2px;
-
       transform: translateY(-1px);
     }
-
-    /* =========================================================
-       INSTAGRAM LOGO — INDEPENDENT CONTROLS
-       ========================================================= */
 
     .instagram-icon {
       width: 22px;
       height: 22px;
-
       margin-left: 2px;
-
       transform: translateY(0);
     }
-
-    /* =========================================================
-       BUTTON INTERACTIONS
-       ========================================================= */
 
     .button:hover {
       background: transparent;
       color: var(--black);
-
       transform: translateY(0);
     }
 
@@ -420,20 +301,14 @@
       outline-offset: 3px;
     }
 
-    /* =========================================================
-       REWARDS DISCLAIMER
-       ========================================================= */
+    /* REWARDS DISCLAIMER */
 
     .rewards-disclaimer {
       position: relative;
       z-index: 5;
-
       width: 100%;
-
       margin-top: auto;
-
       padding: 50px 0 8px;
-
       background: transparent;
       text-align: center;
     }
@@ -441,18 +316,15 @@
     .rewards-disclaimer p {
       max-width: 1200px;
       margin: 0 auto;
-
       font-size: 8px;
       font-weight: 600;
       line-height: 1.6;
       letter-spacing: 0.015em;
-
       color: rgba(0, 0, 0, 0.62);
     }
 
     .rewards-disclaimer a {
       font-weight: 800;
-
       text-decoration: underline;
       text-underline-offset: 2px;
     }
@@ -461,21 +333,15 @@
       color: var(--black);
     }
 
-    /* =========================================================
-       FOOTER — SINGLE ROW
-       ========================================================= */
+    /* FOOTER */
 
     footer {
       position: relative;
       z-index: 10;
-
       flex: 0 0 auto;
       margin-top: auto;
-
       width: 100%;
-
       padding: 24px 8vw;
-
       background: var(--black);
       color: var(--white);
     }
@@ -483,57 +349,41 @@
     .footer-inner {
       display: flex;
       flex-direction: row;
-
       align-items: center;
       justify-content: space-between;
-
       flex-wrap: nowrap;
-
       width: 100%;
       gap: 24px;
     }
 
     .copyright {
       flex: 0 0 auto;
-
       font-size: 10px;
       font-weight: 600;
-
       letter-spacing: 0.03em;
-
       color: #777;
-
       white-space: nowrap;
     }
 
     .footer-links {
       display: flex;
       flex-direction: row;
-
       align-items: center;
       justify-content: flex-end;
-
       flex-wrap: nowrap;
       flex: 0 0 auto;
-
       gap: 28px;
-
       white-space: nowrap;
     }
 
     .footer-links a {
       flex-shrink: 0;
-
       font-size: 10px;
       font-weight: 800;
-
       letter-spacing: 0.1em;
       text-transform: uppercase;
-
       color: #bcbcbc;
-
       white-space: nowrap;
-
       transition: color 150ms ease;
     }
 
@@ -541,12 +391,9 @@
       color: var(--yellow);
     }
 
-    /* =========================================================
-       ULTRAWIDE DESKTOP
-       ========================================================= */
+    /* ULTRAWIDE DESKTOP */
 
     @media (min-width: 2401px) {
-
       .hero-content {
         width: 56%;
         max-width: none;
@@ -561,15 +408,11 @@
         right: -6vw;
         width: 64vw;
       }
-
     }
 
-    /* =========================================================
-       TABLET
-       ========================================================= */
+    /* TABLET */
 
     @media (max-width: 900px) {
-
       .nav {
         padding: 24px;
       }
@@ -595,7 +438,6 @@
         top: 0;
         left: 0;
         right: auto;
-
         width: max(100vw, 1100px);
       }
 
@@ -603,9 +445,7 @@
         right: 0;
         top: 50%;
         bottom: auto;
-
         transform: translateY(-50%);
-
         width: 46vw;
       }
 
@@ -625,17 +465,11 @@
       .footer-links {
         gap: 20px;
       }
-
     }
 
-    /* =========================================================
-       MOBILE
-       ========================================================= */
+    /* MOBILE */
 
     @media (max-width: 600px) {
-
-      /* Hide scrollbar indicators while keeping scrolling enabled */
-
       html,
       body {
         overflow-x: hidden;
@@ -668,29 +502,21 @@
         font-size: 9px;
       }
 
-      /* ---------- MOBILE HERO ---------- */
-
       .hero {
         flex: 1 0 auto;
-
         display: flex;
         flex-direction: column;
-
         align-items: flex-start;
         justify-content: flex-start;
-
         padding: 150px 20px 0;
-
         overflow: hidden;
       }
 
       .hero-content {
         position: relative;
         z-index: 4;
-
         width: 100%;
         max-width: none;
-
         margin-top: 0;
         margin-bottom: 0;
       }
@@ -702,19 +528,14 @@
 
       .hero h1 {
         font-size: clamp(44px, 11vw, 75px);
-
         line-height: 0.92;
         letter-spacing: -0.075em;
-
         white-space: nowrap;
       }
-
-      /* ---------- MOBILE BUTTONS ---------- */
 
       .hero-buttons {
         align-items: flex-start;
         gap: 10px;
-
         margin-top: 32px;
       }
 
@@ -722,9 +543,7 @@
         width: auto;
         max-width: 290px;
         height: 54px;
-
         padding: 0 18px;
-
         font-size: 10px;
         gap: 10px;
       }
@@ -739,33 +558,23 @@
         height: 20px;
       }
 
-      /* ---------- MOBILE BACKGROUND DUCK ---------- */
-
       .hero-duck {
         top: 0;
         left: 0;
         right: auto;
-
         width: max(100vw, 600px);
       }
-
-      /* ---------- MOBILE PHONE ---------- */
 
       .hero-phone {
         position: relative;
         z-index: 2;
-
         top: auto;
         right: auto;
         bottom: auto;
         left: auto;
-
         transform: none;
-
         width: 100%;
-
         margin-top: 35px;
-
         display: flex;
         align-items: center;
         justify-content: center;
@@ -773,25 +582,17 @@
 
       .hero-phone img {
         display: block;
-
         width: 100%;
         height: auto;
-
         max-width: 720px;
         max-height: none;
-
         object-fit: contain;
       }
 
-      /* ---------- MOBILE DISCLAIMER ---------- */
-
       .rewards-disclaimer {
         width: 100%;
-
         margin-top: auto;
-
         padding: 50px 0 24px;
-
         text-align: center;
       }
 
@@ -799,8 +600,6 @@
         font-size: 10px;
         line-height: 1.6;
       }
-
-      /* ---------- MOBILE FOOTER ---------- */
 
       footer {
         width: 100%;
@@ -813,7 +612,6 @@
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
-
         width: 100%;
         min-width: 0;
         gap: 18px;
@@ -825,7 +623,6 @@
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-
         width: 100%;
         gap: 12px 20px;
       }
@@ -840,15 +637,11 @@
         text-align: center;
         white-space: normal;
       }
-
     }
 
-    /* =========================================================
-       SHORT DESKTOP WINDOWS
-       ========================================================= */
+    /* SHORT DESKTOP WINDOWS */
 
     @media (min-width: 601px) and (max-height: 700px) {
-
       .hero {
         padding-top: 110px;
       }
@@ -859,24 +652,17 @@
       }
 
       .hero-phone img {
-        max-height: min(
-          620px,
-          calc(100svh - 120px)
-        );
+        max-height: min(620px, calc(100svh - 120px));
       }
 
       .hero h1 {
         font-size: clamp(40px, 5.5vw, 100px);
       }
-
     }
 
-    /* =========================================================
-       MOBILE HOMEPAGE REFINEMENTS
-       ========================================================= */
+    /* MOBILE HOMEPAGE REFINEMENTS */
 
     @media (max-width: 600px) {
-
       .hero {
         padding: 122px 20px 0;
         align-items: center;
@@ -896,52 +682,42 @@
         margin-bottom: 22px;
       }
 
+      /* Slightly adjusted for the wider Arial Black letterforms */
+
       .hero h1 {
-        font-size: clamp(39px, 10.3vw, 62px);
+        font-size: clamp(37px, 9.8vw, 59px);
         letter-spacing: -0.08em;
         line-height: 0.94;
         white-space: nowrap;
       }
 
-      /* ---------- CENTERED MOBILE BUTTONS ---------- */
-
       .hero-buttons {
         display: flex;
         flex-direction: column;
         align-items: center;
-
         width: 100%;
         max-width: 430px;
-
         gap: 10px;
         margin: 34px auto 0;
       }
 
       .hero-buttons .button {
         position: relative;
-
         width: 88%;
         max-width: 340px;
         height: 56px;
-
         display: flex;
         align-items: center;
         justify-content: center;
-
         gap: 14px;
         padding: 0 16px;
-
         font-size: 11px;
         text-align: center;
       }
 
-      /* Download spacing only */
-
       .hero-buttons .button:first-child {
         gap: 4px;
       }
-
-      /* Text and icon stay together */
 
       .hero-buttons .button span {
         width: auto;
@@ -954,12 +730,9 @@
         flex-shrink: 0;
       }
 
-      /* ---------- MOBILE PHONE ---------- */
-
       .hero-phone {
         width: calc(100% + 100px);
         max-width: 500px;
-
         margin-top: -50px;
         margin-left: -50px;
         margin-right: -50px;
@@ -972,31 +745,18 @@
       }
 
       .rewards-disclaimer {
-        padding: 0px 0 24px;
+        padding: 0 0 24px;
         margin-top: -40px;
       }
-
     }
 
-    /* =========================================================
-       SMALL PHONE — LANDSCAPE ONLY
-
-       This section is limited to:
-       - Landscape orientation
-       - Touchscreen devices
-       - Viewport width up to 950px
-       - Viewport height up to 500px
-
-       Desktop and portrait layouts remain unchanged.
-       ========================================================= */
+    /* SMALL PHONE — LANDSCAPE ONLY */
 
     @media screen
       and (orientation: landscape)
       and (pointer: coarse)
       and (max-width: 970px)
       and (max-height: 500px) {
-
-      /* ---------- SAFE-AREA NAVIGATION ---------- */
 
       .nav {
         padding:
@@ -1014,37 +774,26 @@
         font-size: 9px;
       }
 
-      /* ---------- LANDSCAPE HERO ---------- */
-
       .hero {
         min-height: 420px;
-
         padding:
           85px
           max(32px, calc(env(safe-area-inset-right) + 20px))
           0
           max(32px, calc(env(safe-area-inset-left) + 20px));
-
         align-items: flex-start;
         justify-content: center;
-
         overflow: hidden;
       }
-
-      /* ---------- LEFT-SIDE COPY ---------- */
 
       .hero-content {
         position: relative;
         z-index: 4;
-
         width: 59%;
         max-width: none;
-
         margin-top: auto;
         margin-bottom: auto;
-
         padding-bottom: 12px;
-
         text-align: left;
       }
 
@@ -1056,14 +805,10 @@
 
       .hero h1 {
         font-size: clamp(34px, 5vw, 49px);
-
         line-height: 0.93;
         letter-spacing: -0.08em;
-
         white-space: nowrap;
       }
-
-      /* ---------- SIDE-BY-SIDE LANDSCAPE BUTTONS ---------- */
 
       .hero-buttons {
         display: flex;
@@ -1071,27 +816,20 @@
         flex-wrap: nowrap;
         align-items: center;
         justify-content: flex-start;
-
         width: max-content;
         max-width: none;
-
         gap: 10px;
         margin: 24px 0 0;
       }
 
       .hero-buttons .button {
         display: inline-flex;
-
         width: auto;
         max-width: none;
-
         height: 42px;
         min-height: 42px;
-
         flex: 0 0 auto;
-
         padding: 0 12px;
-
         gap: 7px;
         font-size: 9px;
       }
@@ -1100,29 +838,18 @@
         gap: 4px;
       }
 
-      /* =====================================================
-         LANDSCAPE PHONE SIZE AND POSITION
-
-         Increase width for a larger phone.
-         Decrease width for a smaller phone.
-
-         These settings affect ONLY phone landscape.
-         ===================================================== */
+      /* LANDSCAPE PHONE SIZE AND POSITION */
 
       .hero-phone {
         position: absolute;
         z-index: 2;
-
         top: 49%;
         right: 6vw;
         bottom: auto;
         left: auto;
-
         width: 53vw;
         max-width: none;
-
         margin: 0;
-
         transform: translateY(-50%);
       }
 
@@ -1130,42 +857,34 @@
         display: block;
         width: 100%;
         height: auto;
-
         max-width: none;
         max-height: none;
-
         object-fit: contain;
       }
 
-      /* ---------- LANDSCAPE DISCLAIMER ---------- */
+      /* LANDSCAPE DISCLAIMER */
 
       .rewards-disclaimer {
         position: relative;
         z-index: 5;
-
         width: 40%;
         max-width: none;
-
         margin-top: auto;
         margin-left: 0;
         margin-right: auto;
-
-        padding: 0px 0 40px;
-
+        padding: 0 0 40px;
         text-align: left;
       }
 
       .rewards-disclaimer p {
         max-width: 100%;
         margin: 0;
-
         font-size: 8px;
         line-height: 1.5;
-
         text-align: left;
       }
 
-      /* ---------- LANDSCAPE FOOTER ---------- */
+      /* LANDSCAPE FOOTER */
 
       footer {
         padding:
@@ -1187,21 +906,11 @@
       .copyright {
         font-size: 8px;
       }
-
     }
 
-    /* =========================================================
-       SHALLOW, WIDE DESKTOP WINDOWS ONLY
-
-       The existing short-desktop rule caps the screenshot height
-       at viewport height minus 120px. Remove that cap so the phone
-       stays large and is cropped by the hero instead of shrinking.
-
-       Normal-height desktop and portrait mobile are unchanged.
-       ========================================================= */
+    /* SHALLOW, WIDE DESKTOP WINDOWS ONLY */
 
     @media screen and (min-width: 970px) and (max-height: 500px) {
-
       .hero-phone {
         width: 64vw;
         right: -6vw;
@@ -1215,60 +924,36 @@
         max-width: none;
         max-height: none;
       }
-
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- =====================================================
-       NAVIGATION
-       ===================================================== -->
-
   <header class="nav">
-
-    <a href="/" class="brand">
-      THE DUCK APP
-    </a>
+    <a href="/" class="brand">THE DUCK APP</a>
 
     <nav class="nav-links">
       <a href="support.html">Support</a>
     </nav>
-
   </header>
 
-  <!-- =====================================================
-       MAIN
-       ===================================================== -->
-
   <main>
-
     <section class="hero">
 
       <!-- LARGE BACKGROUND DUCK -->
 
       <div class="hero-duck" aria-hidden="true">
-
-        <img
-          src="assets/duck_official.svg"
-          alt=""
-        />
-
+        <img src="assets/duck_official.svg" alt="" />
       </div>
 
       <!-- HERO GRADIENT -->
 
-      <div
-        class="hero-gradient"
-        aria-hidden="true"
-      ></div>
+      <div class="hero-gradient" aria-hidden="true"></div>
 
       <!-- HERO COPY -->
 
       <div class="hero-content">
-
         <p class="eyebrow">
           DIGITAL DUCK COLLECTING GAME
         </p>
@@ -1290,10 +975,7 @@
             class="button"
             aria-label="Download The Duck App for iOS"
           >
-
             <span>DOWNLOAD</span>
-
-            <!-- CORRECTED APPLE LOGO -->
 
             <svg
               class="button-icon apple-icon"
@@ -1303,7 +985,6 @@
             >
               <path d="M17.05 12.54c.02 2.1 1.84 2.8 1.86 2.81-.02.05-.29 1-.96 1.98-.58.85-1.18 1.7-2.13 1.72-.93.02-1.23-.55-2.3-.55-1.06 0-1.4.53-2.28.57-.92.03-1.62-.93-2.2-1.78-1.2-1.73-2.12-4.9-.89-7.03a3.4 3.4 0 0 1 2.87-1.75c.9-.02 1.74.6 2.3.6.55 0 1.6-.75 2.7-.64.46.02 1.76.19 2.59 1.4-.07.04-1.55.9-1.56 2.67ZM15.3 6.3c.49-.59.82-1.4.73-2.2-.7.03-1.54.46-2.04 1.05-.45.52-.85 1.34-.74 2.13.78.06 1.57-.4 2.05-.98Z"/>
             </svg>
-
           </a>
 
           <!-- INSTAGRAM -->
@@ -1313,7 +994,6 @@
             class="button"
             aria-label="Follow The Duck App on Instagram"
           >
-
             <span>FOLLOW OUR INSTAGRAM</span>
 
             <svg
@@ -1326,21 +1006,8 @@
               stroke-linejoin="round"
               aria-hidden="true"
             >
-
-              <rect
-                x="2"
-                y="2"
-                width="20"
-                height="20"
-                rx="5"
-              />
-
-              <circle
-                cx="12"
-                cy="12"
-                r="4"
-              />
-
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4" />
               <circle
                 cx="17.5"
                 cy="6.5"
@@ -1348,72 +1015,50 @@
                 fill="currentColor"
                 stroke="none"
               />
-
             </svg>
-
           </a>
 
         </div>
-
       </div>
 
       <!-- APP SCREENSHOT -->
 
       <div class="hero-phone">
-
         <img
           src="assets/iphone/iphone-display-1.png"
           alt="The Duck App showing a duck collection and customized vehicle"
         />
-
       </div>
 
       <!-- REWARDS DISCLAIMER -->
 
-      <aside
-        class="rewards-disclaimer"
-        aria-label="Rewards disclaimer"
-      >
-
+      <aside class="rewards-disclaimer" aria-label="Rewards disclaimer">
         <p>
           *In-game rewards have no cash value, cannot be redeemed for cash,
           and are subject to availability, eligibility, modification, or
           discontinuation under our
           <a href="terms.html">Terms of Use</a>.
         </p>
-
       </aside>
 
     </section>
-
   </main>
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+  <!-- FOOTER -->
 
   <footer>
-
     <div class="footer-inner">
-
       <div class="copyright">
         © 2026 Michael Overton. All rights reserved.
       </div>
 
       <nav class="footer-links" aria-label="Footer navigation">
-
         <a href="support.html">Support</a>
-
         <a href="privacy.html">Privacy</a>
-
         <a href="terms.html">Terms</a>
-
         <a href="purchase-terms.html">Purchase Terms</a>
-
       </nav>
-
     </div>
-
   </footer>
 
   <script src="script.js"></script>
