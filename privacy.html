@@ -42,9 +42,7 @@ a {
   text-decoration: none;
 }
 
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
+/* NAVIGATION */
 
 .nav {
   position: absolute;
@@ -96,9 +94,7 @@ a {
   width: 100%;
 }
 
-/* =========================================================
-   MAIN
-   ========================================================= */
+/* MAIN */
 
 main {
   position: relative;
@@ -110,9 +106,7 @@ main {
   background: var(--yellow);
 }
 
-/* =========================================================
-   BACKGROUND DUCK
-   ========================================================= */
+/* BACKGROUND DUCK */
 
 .background-duck {
   position: absolute;
@@ -132,9 +126,7 @@ main {
   height: auto;
 }
 
-/* =========================================================
-   GRADIENT
-   ========================================================= */
+/* GRADIENT */
 
 .page-gradient {
   position: absolute;
@@ -151,9 +143,7 @@ main {
   pointer-events: none;
 }
 
-/* =========================================================
-   CONTENT
-   ========================================================= */
+/* CONTENT */
 
 .page-content {
   position: relative;
@@ -170,9 +160,7 @@ main {
   text-transform: uppercase;
 }
 
-/* =========================================================
-   HEADING
-   ========================================================= */
+/* HEADING */
 
 .page-heading {
   display: flex;
@@ -202,9 +190,7 @@ main {
   padding-bottom: 4px;
 }
 
-/* =========================================================
-   INTRO BAR + CONTROLS
-   ========================================================= */
+/* INTRO BAR + CONTROLS */
 
 .policy-intro {
   display: flex;
@@ -278,9 +264,7 @@ main {
   outline-offset: 3px;
 }
 
-/* =========================================================
-   POLICY GRID
-   ========================================================= */
+/* POLICY GRID */
 
 .policy-grid {
   display: grid;
@@ -324,9 +308,7 @@ main {
   outline-offset: -3px;
 }
 
-/* =========================================================
-   PLUS / MINUS ICON
-   ========================================================= */
+/* PLUS / MINUS ICON */
 
 .plus {
   position: relative;
@@ -360,9 +342,7 @@ main {
   border-bottom: 1px solid rgba(0,0,0,.15);
 }
 
-/* =========================================================
-   EXPANDED TEXT
-   ========================================================= */
+/* EXPANDED TEXT */
 
 .policy-copy {
   padding: 18px 20px 22px;
@@ -399,9 +379,7 @@ main {
   line-height: 1.6;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* FOOTER */
 
 footer {
   position: relative;
@@ -453,9 +431,7 @@ footer {
   color: var(--yellow);
 }
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* TABLET */
 
 @media (max-width: 900px) {
   .nav {
@@ -484,9 +460,7 @@ footer {
   }
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* MOBILE */
 
 @media (max-width: 600px) {
   .nav {
@@ -551,32 +525,54 @@ footer {
     padding: 16px 17px 20px;
   }
 
+  /* MOBILE FOOTER — ALL LINKS FIT */
+
   footer {
-    padding: 20px;
-    overflow-x: auto;
+    width: 100%;
+    padding: 22px max(16px, env(safe-area-inset-right))
+      max(22px, env(safe-area-inset-bottom))
+      max(16px, env(safe-area-inset-left));
+    overflow: hidden;
   }
 
   .footer-inner {
-    width: max-content;
-    min-width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    gap: 18px;
   }
 
   .footer-links {
-    gap: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 12px 20px;
+    white-space: normal;
   }
 
-  .footer-links a,
-  .copyright {
+  .footer-links a {
+    flex-shrink: 0;
     font-size: 9px;
+    white-space: nowrap;
+  }
+
+  .copyright {
+    flex: 0 1 auto;
+    font-size: 9px;
+    text-align: center;
+    white-space: normal;
   }
 }
 
-/* =========================================================
-   PRINT / SAVE AS PDF
-   ========================================================= */
+/* PRINT / SAVE AS PDF */
 
 @media print {
-
   @page {
     margin: 18mm;
   }
@@ -667,11 +663,6 @@ footer {
     display: none !important;
   }
 
-  /*
-    Print all policy content, even if the section is closed.
-    This does not change the on-screen accordion state.
-  */
-
   .policy-item .policy-copy {
     display: block !important;
     padding: 10px 0 0;
@@ -697,6 +688,7 @@ footer {
 }
 </style>
 </head>
+
 
 <body>
 
@@ -1536,9 +1528,7 @@ footer {
 </footer>
 
 <script>
-  /* =========================================================
-     EXPAND ALL / COLLAPSE ALL
-     ========================================================= */
+  /* EXPAND ALL / COLLAPSE ALL */
 
   const policySections = document.querySelectorAll(
     ".policy-grid .policy-item"
@@ -1560,12 +1550,7 @@ footer {
       });
     });
 
-  /* =========================================================
-     PRINT / SAVE AS PDF
-
-     Temporarily expand every section before printing.
-     Restore the original open/closed state afterward.
-     ========================================================= */
+  /* PRINT / SAVE AS PDF */
 
   let originalSectionStates = null;
 
