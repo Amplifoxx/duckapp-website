@@ -9,7 +9,20 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   />
 
-  <meta name="theme-color" content="#050505" />
+  <!-- Request black browser chrome in both appearance modes -->
+  <meta
+    name="theme-color"
+    content="#050505"
+    media="(prefers-color-scheme: light)"
+  />
+  <meta
+    name="theme-color"
+    content="#050505"
+    media="(prefers-color-scheme: dark)"
+  />
+
+  <!-- Applies when launched as an iOS home-screen web app -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
   <title>The Duck App</title>
@@ -29,6 +42,8 @@
       --yellow: #ffd000;
       --black: #050505;
       --white: #f7f7f2;
+
+      color-scheme: dark;
     }
 
     /* =========================================================
@@ -828,7 +843,7 @@
         white-space: normal;
       }
 
-    } /* End mobile media query */
+    }
 
     /* =========================================================
        SHORT DESKTOP WINDOWS
@@ -959,7 +974,8 @@
       }
 
       .rewards-disclaimer {
-        padding: 36px 0 24px;
+        padding: 0px 0 24px;
+        margin-top: -40px;
       }
 
     }
