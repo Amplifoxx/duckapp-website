@@ -9,7 +9,6 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   />
 
-  <!-- Request black browser chrome in both appearance modes -->
   <meta
     name="theme-color"
     content="#050505"
@@ -21,7 +20,6 @@
     media="(prefers-color-scheme: dark)"
   />
 
-  <!-- Applies when launched as an iOS home-screen web app -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
@@ -980,6 +978,230 @@
 
     }
 
+    /* =========================================================
+       SMALL PHONE — LANDSCAPE ONLY
+
+       This section is limited to:
+       - Landscape orientation
+       - Touchscreen devices
+       - Viewport width up to 950px
+       - Viewport height up to 500px
+
+       Desktop and portrait layouts remain unchanged.
+       ========================================================= */
+
+    @media screen
+      and (orientation: landscape)
+      and (pointer: coarse)
+      and (max-width: 950px)
+      and (max-height: 500px) {
+
+      /* ---------- SAFE-AREA NAVIGATION ---------- */
+
+      .nav {
+        padding:
+          18px
+          max(32px, calc(env(safe-area-inset-right) + 20px))
+          18px
+          max(32px, calc(env(safe-area-inset-left) + 20px));
+      }
+
+      .brand {
+        font-size: 13px;
+      }
+
+      .nav-links a {
+        font-size: 9px;
+      }
+
+      /* ---------- LANDSCAPE HERO ---------- */
+
+      .hero {
+        min-height: 420px;
+
+        padding:
+          85px
+          max(32px, calc(env(safe-area-inset-right) + 20px))
+          0
+          max(32px, calc(env(safe-area-inset-left) + 20px));
+
+        align-items: flex-start;
+        justify-content: center;
+
+        overflow: hidden;
+      }
+
+      /* ---------- LEFT-SIDE COPY ---------- */
+
+      .hero-content {
+        position: relative;
+        z-index: 4;
+
+        width: 59%;
+        max-width: none;
+
+        margin-top: auto;
+        margin-bottom: auto;
+
+        padding-bottom: 12px;
+
+        text-align: left;
+      }
+
+      .hero .eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.13em;
+        margin-bottom: 15px;
+      }
+
+      .hero h1 {
+        font-size: clamp(34px, 5vw, 49px);
+
+        line-height: 0.93;
+        letter-spacing: -0.08em;
+
+        white-space: nowrap;
+      }
+
+      /* ---------- SIDE-BY-SIDE LANDSCAPE BUTTONS ---------- */
+
+      .hero-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+
+        width: max-content;
+        max-width: none;
+
+        gap: 10px;
+        margin: 24px 0 0;
+      }
+
+      .hero-buttons .button {
+        display: inline-flex;
+
+        width: auto;
+        max-width: none;
+
+        height: 42px;
+        min-height: 42px;
+
+        flex: 0 0 auto;
+
+        padding: 0 12px;
+
+        gap: 7px;
+        font-size: 9px;
+      }
+
+      .hero-buttons .button:first-child {
+        gap: 4px;
+      }
+
+      /* =====================================================
+         LANDSCAPE PHONE SIZE AND POSITION
+
+         Increase width for a larger phone.
+         Decrease width for a smaller phone.
+
+         These settings affect ONLY phone landscape.
+         ===================================================== */
+
+      .hero-phone {
+        position: absolute;
+        z-index: 2;
+
+        right: -7vw;
+        top: 50%;
+        bottom: auto;
+        left: auto;
+
+        width: 62vw;
+        max-width: none;
+
+        margin: 0;
+
+        transform: translateY(-50%);
+      }
+
+      .hero-phone img {
+        display: block;
+
+        width: 100%;
+        height: auto;
+
+        max-width: none;
+        max-height: none;
+
+        object-fit: contain;
+      }
+
+      /* ---------- LANDSCAPE DISCLAIMER ---------- */
+
+      .rewards-disclaimer {
+        margin-top: auto;
+        padding: 8px 0 12px;
+      }
+
+      .rewards-disclaimer p {
+        font-size: 8px;
+      }
+
+      /* ---------- LANDSCAPE FOOTER ---------- */
+
+      footer {
+        padding:
+          16px
+          max(24px, env(safe-area-inset-right))
+          max(16px, env(safe-area-inset-bottom))
+          max(24px, env(safe-area-inset-left));
+      }
+
+      .footer-inner {
+        gap: 12px;
+      }
+
+      .footer-links {
+        gap: 12px;
+      }
+
+      .footer-links a,
+      .copyright {
+        font-size: 8px;
+      }
+
+    }
+
+    /* =========================================================
+       SHALLOW, WIDE DESKTOP WINDOWS ONLY
+
+       The existing short-desktop rule caps the screenshot height
+       at viewport height minus 120px. Remove that cap so the phone
+       stays large and is cropped by the hero instead of shrinking.
+
+       Normal-height desktop and portrait mobile are unchanged.
+       ========================================================= */
+
+    @media screen and (min-width: 951px) and (max-height: 500px) {
+
+      .hero-phone {
+        width: 64vw;
+        right: -6vw;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .hero-phone img {
+        width: 50%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+      }
+
+    }
+
   </style>
 </head>
 
@@ -1037,7 +1259,7 @@
 
         <h1>
           Collect.<br />
-          Trade.<br />
+          Gift &amp; Trade.<br />
           <span class="rewards-line">Win Rewards.<span class="asterisk">*</span></span>
         </h1>
 
@@ -1061,7 +1283,7 @@
               fill="currentColor"
               aria-hidden="true"
             >
-              <path d="M17.05 12.54c.02 2.1 1.84 2.8 1.86 2.81-.02.05-.29 1-.96 1.98-.58.85-1.18 1.7-2.13 1.72-.93.02-1.23-.55-2.3-.55-1.06 0-1.4.53-2.28.57-.92.03-1.62-.93-2.2-1.78-1.2-1.73-2.12-4.9-.89-7.03a3.4 3.4 0 0 1 2.87-1.75c.9-.02 1.74.6 2.3.6.55 0 1.6-.75 2.7-.64.46.02 1.76.19 2.59 1.4-.07.04-1.55.9-1.56 2.67ZM15.3 6.3c.49-.59.82-1.4.73-2.2-.7.03-1.54.46-2.04 1.05-.45.52-.85 1.34-.74 2.13.78.06 1.57-.4 2.05-.98Z"/>
+              <path d="M17.05 12.54c.02 2.1 1.84 2.8 1.86 2.81-.02.05-.29 1-.96 1.98-.58.85-1.18 1.7-2.13 1.72-.93.02-1.23-.55-2.3-.55-1.06 0-1.4.53-2.28.57-.92.03-1.62-.93-2.2-1.78-1.2-1.73-2.12-4.9-.89-7.03a3.4 3.4 0 0 1 2.87-1.75c.9-.02 1.74.6 2.3.6.55 0 1.6-.75 2.7-.64.46.02 1.76.19 2.59 1.4-.07.04-1.55.9-1.56 2.13.78.06 1.57-.4 2.05-.98Z"/>
             </svg>
 
           </a>
