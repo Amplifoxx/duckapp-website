@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "G77SJVHHY4.com.theduckapp.app"
+        ],
+        "components": [
+          {
+            "/": "/redeem/*",
+            "comment": "Duck App QR redemption links"
+          }
+        ]
+      }
+    ]
+  }
+}
