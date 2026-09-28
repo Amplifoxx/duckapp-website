@@ -5,6 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <script>
+  /*
+   * GitHub Pages sends unknown routes to 404.html.
+   *
+   * For now, Duck redemption URLs redirect to the
+   * Duck App homepage.
+   */
+  (function () {
+    var path = window.location.pathname || "";
+    var redeemPattern = /^\/redeem\/[^/]+\/?$/i;
+
+    if (redeemPattern.test(path)) {
+      window.location.replace("/");
+    }
+  })();
+</script>
+
   <title>Page Not Found — The Duck App</title>
 
   <meta
