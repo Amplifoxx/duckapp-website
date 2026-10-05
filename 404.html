@@ -85,6 +85,11 @@
               "primary-button"
             );
 
+            var downloadButton =
+  document.getElementById(
+    "download-button"
+  );
+
           if (pageEyebrow) {
             pageEyebrow.textContent =
               "THE DUCK APP";
@@ -118,6 +123,10 @@
           if (primaryButton) {
             primaryButton.textContent =
               "OPEN THE DUCK APP";
+
+              if (downloadButton) {
+  downloadButton.hidden = false;
+}
 
             primaryButton.href =
               "theduckapp://user/" +
@@ -408,6 +417,32 @@
       outline: 2px solid var(--yellow);
       outline-offset: 4px;
     }
+
+    .secondary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50px;
+  margin-top: 12px;
+  padding: 0 20px;
+  border: 2px solid #444;
+  background: transparent;
+  color: #777;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-align: center;
+  cursor: default;
+}
+
+.secondary-button-note {
+  margin-left: 8px;
+  color: #555;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
 
     /* =========================================================
        FOOTER
@@ -707,6 +742,18 @@
           >
             BACK TO THE DUCK APP
           </a>
+
+          <div
+  class="secondary-button"
+  id="download-button"
+  hidden
+  aria-disabled="true"
+>
+  GET THE DUCK APP
+  <span class="secondary-button-note">
+    COMING SOON
+  </span>
+</div>
 
         </section>
 
