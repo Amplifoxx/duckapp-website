@@ -9,6 +9,10 @@
           {
             "/": "/redeem/*",
             "comment": "Duck App QR redemption links"
+          },
+          {
+            "/": "/user/*",
+            "comment": "Duck App user profile links"
           }
         ]
       }
