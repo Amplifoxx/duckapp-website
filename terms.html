@@ -1,1154 +1,1146 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+
 <title>Terms of Use — The Duck App</title>
+
 <meta name="description" content="Terms of Use for The Duck App." />
 
+
+
 <style>
+
 :root {
-  --yellow: #ffd000;
-  --black: #050505;
-  --white: #f7f7f2;
+
+&#x20; \--yellow: #ffd000;
+
+&#x20; \--black: #050505;
+
+&#x20; \--white: #f7f7f2;
+
 }
+
+
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+
+&#x20; box-sizing: border-box;
+
+&#x20; margin: 0;
+
+&#x20; padding: 0;
+
 }
+
+
 
 html {
-  min-height: 100%;
-  scroll-behavior: smooth;
+
+&#x20; min-height: 100%;
+
+&#x20; scroll-behavior: smooth;
+
 }
+
+
 
 body {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  background: var(--yellow);
-  color: var(--black);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
+
+&#x20; min-height: 100vh;
+
+&#x20; min-height: 100svh;
+
+&#x20; display: flex;
+
+&#x20; flex-direction: column;
+
+&#x20; background: var(--yellow);
+
+&#x20; color: var(--black);
+
+&#x20; font-family: Arial, Helvetica, sans-serif;
+
+&#x20; -webkit-font-smoothing: antialiased;
+
 }
+
+
 
 a {
-  color: inherit;
-  text-decoration: none;
+
+&#x20; color: inherit;
+
+&#x20; text-decoration: none;
+
 }
 
+
+
 /* =========================================================
-   NAVIGATION
-   ========================================================= */
+
+&#x20;  NAVIGATION
+
+&#x20;  \========================================================= */
+
+
 
 .nav {
-  position: absolute;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px 42px;
-  background: transparent;
+
+&#x20; position: absolute;
+
+&#x20; z-index: 100;
+
+&#x20; top: 0;
+
+&#x20; left: 0;
+
+&#x20; width: 100%;
+
+&#x20; display: flex;
+
+&#x20; align-items: center;
+
+&#x20; justify-content: space-between;
+
+&#x20; padding: 24px 42px;
+
+&#x20; background: transparent;
+
 }
+
+
 
 .brand {
-  font-size: 16px;
-  font-weight: 900;
-  letter-spacing: -.02em;
-  white-space: nowrap;
+
+&#x20; font-size: 16px;
+
+&#x20; font-weight: 900;
+
+&#x20; letter-spacing: -.02em;
+
+&#x20; white-space: nowrap;
+
 }
+
+
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
+
+&#x20; display: flex;
+
+&#x20; align-items: center;
+
+&#x20; gap: 32px;
+
 }
+
+
 
 .nav-links a {
-  position: relative;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  white-space: nowrap;
+
+&#x20; position: relative;
+
+&#x20; font-size: 11px;
+
+&#x20; font-weight: 800;
+
+&#x20; letter-spacing: .12em;
+
+&#x20; text-transform: uppercase;
+
+&#x20; white-space: nowrap;
+
 }
+
+
 
 .nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -7px;
-  width: 0;
-  height: 2px;
-  background: var(--black);
-  transition: width 180ms ease;
+
+&#x20; content: "";
+
+&#x20; position: absolute;
+
+&#x20; left: 0;
+
+&#x20; bottom: -7px;
+
+&#x20; width: 0;
+
+&#x20; height: 2px;
+
+&#x20; background: var(--black);
+
+&#x20; transition: width 180ms ease;
+
 }
+
+
 
 .nav-links a:hover::after {
-  width: 100%;
+
+&#x20; width: 100%;
+
 }
 
+
+
 /* =========================================================
-   PAGE
-   ========================================================= */
+
+&#x20;  PAGE
+
+&#x20;  \========================================================= */
+
+
 
 main {
-  position: relative;
-  flex: 1 0 auto;
-  width: 100%;
-  padding: 105px 8vw 75px;
-  overflow: hidden;
-  isolation: isolate;
-  background: var(--yellow);
+
+&#x20; position: relative;
+
+&#x20; flex: 1 0 auto;
+
+&#x20; width: 100%;
+
+&#x20; padding: 105px 8vw 75px;
+
+&#x20; overflow: hidden;
+
+&#x20; isolation: isolate;
+
+&#x20; background: var(--yellow);
+
 }
+
+
 
 .background-duck {
-  position: absolute;
-  z-index: 0;
-  top: -100px;
-  left: 0;
-  width: max(80vw, 1100px);
-  transform: translate(-96%, -11%) rotate(-8deg);
-  opacity: .06;
-  pointer-events: none;
-  user-select: none;
+
+&#x20; position: absolute;
+
+&#x20; z-index: 0;
+
+&#x20; top: -100px;
+
+&#x20; left: 0;
+
+&#x20; width: max(80vw, 1100px);
+
+&#x20; transform: translate(-96%, -11%) rotate(-8deg);
+
+&#x20; opacity: .06;
+
+&#x20; pointer-events: none;
+
+&#x20; user-select: none;
+
 }
+
+
 
 .background-duck img {
-  display: block;
-  width: 200%;
-  height: auto;
+
+&#x20; display: block;
+
+&#x20; width: 200%;
+
+&#x20; height: auto;
+
 }
+
+
 
 .page-gradient {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  background: linear-gradient(
-    to left,
-    rgba(105,72,0,.30) 0%,
-    rgba(105,72,0,.15) 25%,
-    rgba(105,72,0,0) 50%,
-    rgba(105,72,0,.05) 75%,
-    rgba(105,72,0,.10) 100%
-  );
-  pointer-events: none;
+
+&#x20; position: absolute;
+
+&#x20; z-index: 1;
+
+&#x20; inset: 0;
+
+&#x20; background: linear-gradient(
+
+&#x20;   to left,
+
+&#x20;   rgba(105,72,0,.30) 0%,
+
+&#x20;   rgba(105,72,0,.15) 25%,
+
+&#x20;   rgba(105,72,0,0) 50%,
+
+&#x20;   rgba(105,72,0,.05) 75%,
+
+&#x20;   rgba(105,72,0,.10) 100%
+
+&#x20; );
+
+&#x20; pointer-events: none;
+
 }
+
+
 
 .page-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
+
+&#x20; position: relative;
+
+&#x20; z-index: 2;
+
+&#x20; width: 100%;
+
+&#x20; max-width: 1600px;
+
+&#x20; margin: 0 auto;
+
 }
+
+
 
 .eyebrow {
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: .18em;
-  text-transform: uppercase;
+
+&#x20; font-size: 11px;
+
+&#x20; font-weight: 900;
+
+&#x20; letter-spacing: .18em;
+
+&#x20; text-transform: uppercase;
+
 }
 
+
+
 /* =========================================================
-   HERO
-   ========================================================= */
+
+&#x20;  HERO
+
+&#x20;  \========================================================= */
+
+
 
 .page-heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 32px;
-  margin-bottom: 54px;
+
+&#x20; display: flex;
+
+&#x20; align-items: flex-end;
+
+&#x20; justify-content: space-between;
+
+&#x20; gap: 32px;
+
+&#x20; margin-bottom: 54px;
+
 }
+
+
 
 .page-heading .eyebrow {
-  margin-bottom: 12px;
+
+&#x20; margin-bottom: 12px;
+
 }
+
+
 
 .page-heading h1 {
-  font-size: clamp(50px, 5.2vw, 90px);
-  font-weight: 900;
-  line-height: .88;
-  letter-spacing: -.085em;
-  margin-left: -.065em;
-  text-transform: uppercase;
+
+&#x20; font-size: clamp(50px, 5.2vw, 90px);
+
+&#x20; font-weight: 900;
+
+&#x20; line-height: .88;
+
+&#x20; letter-spacing: -.085em;
+
+&#x20; margin-left: -.065em;
+
+&#x20; text-transform: uppercase;
+
 }
+
+
 
 .updated {
-  font-size: 11px;
-  font-weight: 700;
-  white-space: nowrap;
-  padding-bottom: 4px;
+
+&#x20; font-size: 11px;
+
+&#x20; font-weight: 700;
+
+&#x20; white-space: nowrap;
+
+&#x20; padding-bottom: 4px;
+
 }
 
+
+
 /* =========================================================
-   CONTINUOUS LEGAL DOCUMENT
-   ========================================================= */
+
+&#x20;  CONTINUOUS LEGAL DOCUMENT
+
+&#x20;  \========================================================= */
+
+
 
 .document-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 850px);
-  gap: clamp(35px, 6vw, 110px);
+
+&#x20; display: grid;
+
+&#x20; grid-template-columns: minmax(0, 1fr) minmax(0, 850px);
+
+&#x20; gap: clamp(35px, 6vw, 110px);
+
 }
+
+
 
 .legal-document {
-  min-width: 0;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.8;
+
+&#x20; min-width: 0;
+
+&#x20; font-size: 13px;
+
+&#x20; font-weight: 500;
+
+&#x20; line-height: 1.8;
+
 }
+
+
 
 .legal-document section {
-  padding: 0 0 26px;
-  margin-bottom: 27px;
-  border-bottom: 1px solid rgba(0,0,0,.22);
+
+&#x20; padding: 0 0 26px;
+
+&#x20; margin-bottom: 27px;
+
+&#x20; border-bottom: 1px solid rgba(0,0,0,.22);
+
 }
+
+
 
 .legal-document section:first-child {
-  padding-bottom: 32px;
-  border-bottom: 2px solid var(--black);
+
+&#x20; padding-bottom: 32px;
+
+&#x20; border-bottom: 2px solid var(--black);
+
 }
+
+
 
 .legal-document section:first-child p {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.7;
+
+&#x20; font-size: 15px;
+
+&#x20; font-weight: 700;
+
+&#x20; line-height: 1.7;
+
 }
+
+
 
 .legal-document h2 {
-  margin-bottom: 13px;
-  font-size: clamp(18px, 1.65vw, 24px);
-  font-weight: 900;
-  line-height: 1.15;
-  letter-spacing: -.045em;
-  text-transform: uppercase;
+
+&#x20; margin-bottom: 13px;
+
+&#x20; font-size: clamp(18px, 1.65vw, 24px);
+
+&#x20; font-weight: 900;
+
+&#x20; line-height: 1.15;
+
+&#x20; letter-spacing: -.045em;
+
+&#x20; text-transform: uppercase;
+
 }
+
+
 
 .legal-document p + p {
-  margin-top: 14px;
+
+&#x20; margin-top: 14px;
+
 }
+
+
 
 .legal-document a {
-  font-weight: 800;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+
+&#x20; font-weight: 800;
+
+&#x20; text-decoration: underline;
+
+&#x20; text-underline-offset: 3px;
+
 }
+
+
 
 .legal-document a:hover {
-  text-decoration-thickness: 2px;
+
+&#x20; text-decoration-thickness: 2px;
+
 }
+
+
 
 .legal-related {
-  padding-top: 5px;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.7;
+
+&#x20; padding-top: 5px;
+
+&#x20; font-size: 12px;
+
+&#x20; font-weight: 600;
+
+&#x20; line-height: 1.7;
+
 }
 
+
+
 /* =========================================================
-   FOOTER
-   ========================================================= */
+
+&#x20;  FOOTER
+
+&#x20;  \========================================================= */
+
+
 
 footer {
-  position: relative;
-  z-index: 10;
-  flex: 0 0 auto;
-  width: 100%;
-  margin-top: auto;
-  padding: 20px 8vw;
-  background: var(--black);
-  color: var(--white);
+
+&#x20; position: relative;
+
+&#x20; z-index: 10;
+
+&#x20; flex: 0 0 auto;
+
+&#x20; width: 100%;
+
+&#x20; margin-top: auto;
+
+&#x20; padding: 20px 8vw;
+
+&#x20; background: var(--black);
+
+&#x20; color: var(--white);
+
 }
+
+
 
 .footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  gap: 24px;
+
+&#x20; display: flex;
+
+&#x20; align-items: center;
+
+&#x20; justify-content: space-between;
+
+&#x20; flex-wrap: nowrap;
+
+&#x20; gap: 24px;
+
 }
+
+
 
 .copyright {
-  flex: 0 0 auto;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: .03em;
-  color: #777;
-  white-space: nowrap;
+
+&#x20; flex: 0 0 auto;
+
+&#x20; font-size: 10px;
+
+&#x20; font-weight: 600;
+
+&#x20; letter-spacing: .03em;
+
+&#x20; color: #777;
+
+&#x20; white-space: nowrap;
+
 }
+
+
 
 .footer-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
-  gap: 28px;
-  white-space: nowrap;
+
+&#x20; display: flex;
+
+&#x20; align-items: center;
+
+&#x20; justify-content: flex-end;
+
+&#x20; flex-wrap: nowrap;
+
+&#x20; gap: 28px;
+
+&#x20; white-space: nowrap;
+
 }
+
+
 
 .footer-links a {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #bcbcbc;
-  white-space: nowrap;
+
+&#x20; font-size: 10px;
+
+&#x20; font-weight: 800;
+
+&#x20; letter-spacing: .1em;
+
+&#x20; text-transform: uppercase;
+
+&#x20; color: #bcbcbc;
+
+&#x20; white-space: nowrap;
+
 }
+
+
 
 .footer-links a:hover {
-  color: var(--yellow);
+
+&#x20; color: var(--yellow);
+
 }
 
+
+
 /* =========================================================
-   TABLET
-   ========================================================= */
+
+&#x20;  TABLET
+
+&#x20;  \========================================================= */
+
+
 
 @media (max-width: 1000px) {
-  .nav {
-    padding: 24px;
-  }
 
-  main {
-    padding: 105px 24px 55px;
-  }
+&#x20; .nav {
 
-  .document-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 750px);
-    gap: 30px;
-  }
+&#x20;   padding: 24px;
 
-  footer {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
+&#x20; }
 
-  .footer-links {
-    gap: 18px;
-  }
+
+
+&#x20; main {
+
+&#x20;   padding: 105px 24px 55px;
+
+&#x20; }
+
+
+
+&#x20; .document-layout {
+
+&#x20;   grid-template-columns: minmax(0, 1fr) minmax(0, 750px);
+
+&#x20;   gap: 30px;
+
+&#x20; }
+
+
+
+&#x20; footer {
+
+&#x20;   padding-left: 24px;
+
+&#x20;   padding-right: 24px;
+
+&#x20; }
+
+
+
+&#x20; .footer-links {
+
+&#x20;   gap: 18px;
+
+&#x20; }
+
 }
 
+
+
 /* =========================================================
-   MOBILE
-   ========================================================= */
+
+&#x20;  MOBILE
+
+&#x20;  \========================================================= */
+
+
 
 @media (max-width: 600px) {
-  .nav {
-    padding: 22px 20px;
-  }
 
-  .brand {
-    font-size: 13px;
-  }
+&#x20; .nav {
 
-  .nav-links {
-    gap: 16px;
-  }
+&#x20;   padding: 22px 20px;
 
-  .nav-links a {
-    font-size: 9px;
-  }
+&#x20; }
 
-  main {
-    padding: 100px 20px 45px;
-  }
 
-  .page-heading {
-    display: block;
-    margin-bottom: 38px;
-  }
 
-  .page-heading h1 {
-    font-size: clamp(48px, 11vw, 70px);
-  }
+&#x20; .brand {
 
-  .updated {
-    margin-top: 16px;
-  }
+&#x20;   font-size: 13px;
 
-  .document-layout {
-    display: block;
-  }
+&#x20; }
 
-  .legal-document {
-    font-size: 12px;
-    line-height: 1.75;
-  }
 
-  .legal-document section {
-    padding-bottom: 24px;
-    margin-bottom: 25px;
-  }
 
-  .legal-document section:first-child p {
-    font-size: 13px;
-  }
+&#x20; .nav-links {
 
-  .legal-document h2 {
-    font-size: 19px;
-  }
+&#x20;   gap: 16px;
 
-  /* MOBILE FOOTER — WRAPPING LINKS */
+&#x20; }
 
-  footer {
-    width: 100%;
-    padding:
-      22px max(16px, env(safe-area-inset-right))
-      max(22px, env(safe-area-inset-bottom))
-      max(16px, env(safe-area-inset-left));
-    overflow: hidden;
-  }
 
-  .footer-inner {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-width: 0;
-    gap: 18px;
-  }
 
-  .footer-links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 12px 20px;
-    white-space: normal;
-  }
+&#x20; .nav-links a {
 
-  .footer-links a {
-    flex-shrink: 0;
-    font-size: 9px;
-    white-space: nowrap;
-  }
+&#x20;   font-size: 9px;
 
-  .copyright {
-    flex: 0 1 auto;
-    font-size: 9px;
-    text-align: center;
-    white-space: normal;
-  }
+&#x20; }
+
+
+
+&#x20; main {
+
+&#x20;   padding: 100px 20px 45px;
+
+&#x20; }
+
+
+
+&#x20; .page-heading {
+
+&#x20;   display: block;
+
+&#x20;   margin-bottom: 38px;
+
+&#x20; }
+
+
+
+&#x20; .page-heading h1 {
+
+&#x20;   font-size: clamp(48px, 11vw, 70px);
+
+&#x20; }
+
+
+
+&#x20; .updated {
+
+&#x20;   margin-top: 16px;
+
+&#x20; }
+
+
+
+&#x20; .document-layout {
+
+&#x20;   display: block;
+
+&#x20; }
+
+
+
+&#x20; .legal-document {
+
+&#x20;   font-size: 12px;
+
+&#x20;   line-height: 1.75;
+
+&#x20; }
+
+
+
+&#x20; .legal-document section {
+
+&#x20;   padding-bottom: 24px;
+
+&#x20;   margin-bottom: 25px;
+
+&#x20; }
+
+
+
+&#x20; .legal-document section:first-child p {
+
+&#x20;   font-size: 13px;
+
+&#x20; }
+
+
+
+&#x20; .legal-document h2 {
+
+&#x20;   font-size: 19px;
+
+&#x20; }
+
+
+
+&#x20; /* MOBILE FOOTER — WRAPPING LINKS */
+
+
+
+&#x20; footer {
+
+&#x20;   width: 100%;
+
+&#x20;   padding:
+
+&#x20;     22px max(16px, env(safe-area-inset-right))
+
+&#x20;     max(22px, env(safe-area-inset-bottom))
+
+&#x20;     max(16px, env(safe-area-inset-left));
+
+&#x20;   overflow: hidden;
+
+&#x20; }
+
+
+
+&#x20; .footer-inner {
+
+&#x20;   display: flex;
+
+&#x20;   flex-direction: column-reverse;
+
+&#x20;   align-items: center;
+
+&#x20;   justify-content: center;
+
+&#x20;   width: 100%;
+
+&#x20;   min-width: 0;
+
+&#x20;   gap: 18px;
+
+&#x20; }
+
+
+
+&#x20; .footer-links {
+
+&#x20;   display: flex;
+
+&#x20;   flex-direction: row;
+
+&#x20;   align-items: center;
+
+&#x20;   justify-content: center;
+
+&#x20;   flex-wrap: wrap;
+
+&#x20;   width: 100%;
+
+&#x20;   gap: 12px 20px;
+
+&#x20;   white-space: normal;
+
+&#x20; }
+
+
+
+&#x20; .footer-links a {
+
+&#x20;   flex-shrink: 0;
+
+&#x20;   font-size: 9px;
+
+&#x20;   white-space: nowrap;
+
+&#x20; }
+
+
+
+&#x20; .copyright {
+
+&#x20;   flex: 0 1 auto;
+
+&#x20;   font-size: 9px;
+
+&#x20;   text-align: center;
+
+&#x20;   white-space: normal;
+
+&#x20; }
+
 }
+
+
 
 /* =========================================================
-   PRINT / SAVE AS PDF
-   ========================================================= */
+
+&#x20;  PRINT / SAVE AS PDF
+
+&#x20;  \========================================================= */
+
+
 
 @media print {
-  @page {
-    margin: 18mm;
-  }
 
-  html,
-  body {
-    display: block;
-    min-height: 0;
-    background: white !important;
-    color: black !important;
-  }
+&#x20; @page {
 
-  .nav,
-  .background-duck,
-  .page-gradient,
-  footer {
-    display: none !important;
-  }
+&#x20;   margin: 18mm;
 
-  main {
-    padding: 0 !important;
-    overflow: visible !important;
-    background: white !important;
-  }
+&#x20; }
 
-  .page-content {
-    max-width: none;
-  }
 
-  .page-heading {
-    margin-bottom: 25px;
-  }
 
-  .page-heading h1 {
-    font-size: 38pt;
-  }
+&#x20; html,
 
-  .document-layout {
-    display: block;
-  }
+&#x20; body {
 
-  .legal-document {
-    font-size: 10pt;
-    line-height: 1.5;
-  }
+&#x20;   display: block;
 
-  .legal-document section {
-    break-inside: auto;
-  }
+&#x20;   min-height: 0;
 
-  .legal-document h2 {
-    font-size: 13pt;
-    break-after: avoid;
-    page-break-after: avoid;
-  }
+&#x20;   background: white !important;
 
-  .legal-document p {
-    orphans: 3;
-    widows: 3;
-  }
+&#x20;   color: black !important;
+
+&#x20; }
+
+
+
+&#x20; .nav,
+
+&#x20; .background-duck,
+
+&#x20; .page-gradient,
+
+&#x20; footer {
+
+&#x20;   display: none !important;
+
+&#x20; }
+
+
+
+&#x20; main {
+
+&#x20;   padding: 0 !important;
+
+&#x20;   overflow: visible !important;
+
+&#x20;   background: white !important;
+
+&#x20; }
+
+
+
+&#x20; .page-content {
+
+&#x20;   max-width: none;
+
+&#x20; }
+
+
+
+&#x20; .page-heading {
+
+&#x20;   margin-bottom: 25px;
+
+&#x20; }
+
+
+
+&#x20; .page-heading h1 {
+
+&#x20;   font-size: 38pt;
+
+&#x20; }
+
+
+
+&#x20; .document-layout {
+
+&#x20;   display: block;
+
+&#x20; }
+
+
+
+&#x20; .legal-document {
+
+&#x20;   font-size: 10pt;
+
+&#x20;   line-height: 1.5;
+
+&#x20; }
+
+
+
+&#x20; .legal-document section {
+
+&#x20;   break-inside: auto;
+
+&#x20; }
+
+
+
+&#x20; .legal-document h2 {
+
+&#x20;   font-size: 13pt;
+
+&#x20;   break-after: avoid;
+
+&#x20;   page-break-after: avoid;
+
+&#x20; }
+
+
+
+&#x20; .legal-document p {
+
+&#x20;   orphans: 3;
+
+&#x20;   widows: 3;
+
+&#x20; }
+
 }
+
 </style>
+
 </head>
 
-<body>
+
+
+<body data-legal-document="terms_of_use">
+
+
 
 <header class="nav">
-  <a href="index.html" class="brand">THE DUCK APP</a>
 
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="support.html">Support</a>
-  </nav>
+&#x20; <a href="index.html" class="brand">THE DUCK APP</a>
+
+
+
+&#x20; <nav class="nav-links">
+
+&#x20;   <a href="index.html">Home</a>
+
+&#x20;   <a href="support.html">Support</a>
+
+&#x20; </nav>
+
 </header>
+
+
 
 <main>
 
-  <div class="background-duck" aria-hidden="true">
-    <img src="assets/duck_official.svg" alt="" />
-  </div>
-
-  <div class="page-gradient" aria-hidden="true"></div>
-
-  <div class="page-content">
-
-    <div class="page-heading">
-      <div>
-        <p class="eyebrow">LEGAL</p>
-        <h1>TERMS<br />OF USE.</h1>
-      </div>
-
-      <p class="updated">Last updated September 2026</p>
-    </div>
-
-    <div class="document-layout">
-
-      <div aria-hidden="true"></div>
-
-      <article class="legal-document">
-
-        <!-- INTRODUCTION -->
-
-        <section>
-          <p>
-            These Terms of Use govern your access to and use of
-            The Duck App, also referred to as "Duck App," and its
-            related services (collectively, the "Service").
-            References to "The Duck App," "Duck App," "we," "us,"
-            or "our" in these Terms refer to the operator of the
-            Service. By creating an account, accessing, or using
-            the Service, you agree to these Terms.
-          </p>
-        </section>
-
-        <!-- USING THE APP -->
-
-        <section>
-          <h2>Using the App</h2>
-
-          <p>
-            You may use the app only in accordance with these Terms
-            and applicable law. You are responsible for your use of
-            the app and for activity occurring through your account.
-          </p>
-        </section>
-
-        <!-- YOUR ACCOUNT -->
-
-        <section>
-          <h2>Your Account</h2>
-
-          <p>
-            You are responsible for maintaining the security of your
-            account and for providing accurate information where
-            required. You may not impersonate another person, create
-            accounts for fraudulent or abusive purposes, share access
-            in a manner that compromises account security, or attempt
-            to gain unauthorized access to another user's account or
-            information.
-          </p>
-        </section>
-
-        <!-- VEHICLE INFORMATION -->
-
-        <section>
-          <h2>License Plates and Vehicle Information</h2>
-
-          <p>
-            The app may allow users to associate license plate
-            information, vehicle information, QR codes, or similar
-            identifiers with an account. You represent that you are
-            authorized to submit, use, or associate information you
-            provide through these features.
-          </p>
-
-          <p>
-            You may not use these features to impersonate another
-            user, falsely claim another vehicle, harass or track
-            another person, obtain unauthorized information, or
-            otherwise use vehicle information for an unlawful or
-            abusive purpose.
-          </p>
-        </section>
-
-        <!-- VIRTUAL ITEMS -->
-
-        <section>
-          <h2>Collections and Virtual Items</h2>
-
-          <p>
-            Ducks, Duck Bucks, crates, achievements, rewards, and
-            other virtual items are features of the service. Except
-            where otherwise required by applicable law, virtual items
-            do not represent money, property, a financial account, or
-            an ownership interest in The Duck App or its assets.
-          </p>
-
-          <p>
-            Access to virtual items is provided through the service
-            and does not constitute a sale or transfer of ownership
-            of the underlying software, artwork, intellectual
-            property, or other app content.
-          </p>
-        </section>
-
-        <!-- PURCHASES -->
-
-        <section>
-          <h2>Purchases</h2>
-
-          <p>
-            Purchases, Duck Bucks, crates, and other paid or virtual
-            items are additionally governed by our
-            <a href="purchase-terms.html">Purchase Terms</a>,
-            which form part of these Terms of Use.
-          </p>
-        </section>
-
-        <!-- GIFTING AND TRADING -->
-
-        <section>
-          <h2>Gifting and Trading</h2>
-
-          <p>
-            The app may allow eligible virtual items to be gifted or
-            traded between users. Gifting and trading features may be
-            subject to eligibility rules, limits, restrictions,
-            availability, or changes. Certain ducks or other virtual
-            items may be designated as non-giftable or non-tradeable.
-          </p>
-
-          <p>
-            We do not guarantee the availability, value, rarity,
-            desirability, or future transferability of any virtual
-            item.
-          </p>
-        </section>
-
-        <!-- REAL-MONEY MARKETPLACE -->
-
-        <section>
-          <h2>No Real-Money Marketplace</h2>
-
-          <p>
-            Unless expressly authorized by us, users may not use the
-            service to buy, sell, exchange, wager, or otherwise
-            transfer virtual items, accounts, or app benefits in
-            exchange for real-world money or other things of monetary
-            value.
-          </p>
-
-          <p>
-            We may restrict activity reasonably believed to involve
-            an unauthorized marketplace, fraudulent transaction,
-            commercial exploitation, or other misuse of the service.
-          </p>
-        </section>
-
-        <!-- ACCEPTABLE USE -->
-
-        <section>
-          <h2>Acceptable Use</h2>
-
-          <p>
-            You may not use the app to engage in fraud, harassment,
-            threats, abuse, unlawful conduct, unauthorized commercial
-            activity, infringement of another person's rights,
-            manipulation of app systems, exploitation of bugs,
-            interference with other users, or attempts to compromise
-            the security, integrity, or operation of the service.
-          </p>
-        </section>
-
-        <!-- AUTOMATION -->
-
-        <section>
-          <h2>Automated and Abusive Activity</h2>
-
-          <p>
-            You may not use bots, scripts, automation, exploits,
-            unauthorized software, modified clients, or other methods
-            to manipulate collections, rewards, Duck Bucks, crates,
-            gifting, trading, achievements, accounts, or other app
-            features.
-          </p>
-        </section>
-
-        <!-- ERRORS -->
-
-        <section>
-          <h2>Errors and Corrections</h2>
-
-          <p>
-            We may investigate and correct account balances, virtual
-            items, rewards, achievements, transactions, or other
-            account information resulting from technical errors,
-            duplicate grants, fraud, exploits, unauthorized activity,
-            or abuse, subject to applicable law.
-          </p>
-        </section>
-
-        <!-- CHANGES TO SERVICE -->
-
-        <section>
-          <h2>Changes to the Service</h2>
-
-          <p>
-            The Duck App may modify, update, add, remove, rebalance,
-            restrict, suspend, or discontinue features of the app as
-            the service evolves, subject to applicable law.
-          </p>
-
-          <p>
-            This may include changes to collections, virtual items,
-            rewards, achievements, gifting, trading, functionality,
-            pricing, availability, technical requirements, or other
-            aspects of the service.
-          </p>
-        </section>
-
-        <!-- SERVICE AVAILABILITY -->
-
-        <section>
-          <h2>Service Availability and Discontinuation</h2>
-
-          <p>
-            We do not guarantee that the app, its servers, or any
-            feature of the service will remain available indefinitely
-            or operate without interruption. The service may be
-            interrupted, suspended, modified, or discontinued in whole
-            or in part.
-          </p>
-
-          <p>
-            If the service is discontinued, accounts, collections,
-            ducks, Duck Bucks, crates, achievements, rewards, and
-            other virtual items or account data may become inaccessible
-            or may be deleted. Use of the app does not create a right
-            to permanent operation of the service, permanent
-            maintenance of an account, or permanent access to virtual
-            items or account data.
-          </p>
-
-          <p>
-            Any rights to refunds, notice, data access, or other
-            remedies remain subject to applicable law and applicable
-            platform policies.
-          </p>
-        </section>
-
-        <!-- SUSPENSION -->
-
-        <section>
-          <h2>Account Suspension and Termination</h2>
-
-          <p>
-            We may restrict, suspend, or terminate access to the app
-            when we reasonably believe an account has violated these
-            Terms, abused the service, engaged in fraudulent or
-            unlawful activity, infringed the rights of another party,
-            or created a security or operational risk.
-          </p>
-
-          <p>
-            Suspension or termination may result in loss of access to
-            account features, collections, virtual items, or other
-            account information, subject to applicable law.
-          </p>
-        </section>
-
-        <!-- ACCOUNT DELETION -->
-
-        <section>
-          <h2>Account Deletion</h2>
-
-          <p>
-            You may request deletion of your account through the
-            account deletion features provided by the app. Account
-            deletion may permanently remove account information,
-            collections, virtual items, progress, and other associated
-            data, except information that The Duck App is permitted
-            or required to retain.
-          </p>
-        </section>
-
-        <!-- INTELLECTUAL PROPERTY -->
-
-        <section>
-          <h2>Our Intellectual Property</h2>
-
-          <p>
-            The app and its software, original artwork, graphics,
-            branding, designs, interfaces, text, features, databases,
-            and other content provided by us are owned by or licensed
-            to The Duck App and are protected by applicable
-            intellectual property and other laws.
-          </p>
-
-          <p>
-            Except for the limited right to use the service in
-            accordance with these Terms, no rights in this
-            intellectual property are granted or transferred to you.
-          </p>
-        </section>
-
-        <!-- TRADEMARKS -->
-
-        <section>
-          <h2>Third-Party Trademarks and No Affiliation</h2>
-
-          <p>
-            The Duck App is an independent service and is not
-            affiliated with, associated with, authorized by, endorsed
-            by, sponsored by, or in any way officially connected with
-            FCA US LLC, Stellantis N.V., Jeep®, or any of their
-            respective parents, subsidiaries, affiliates, licensors,
-            dealers, or other related entities.
-          </p>
-
-          <p>
-            Jeep® and any other third-party names, trademarks,
-            service marks, logos, vehicle names, product names, and
-            brand identifiers referenced in connection with the
-            service are the property of their respective owners. Any
-            reference to a third-party brand or product is intended
-            solely to identify or describe relevant vehicles,
-            products, communities, or subject matter and does not
-            imply sponsorship, endorsement, authorization, or
-            affiliation.
-          </p>
-
-          <p>
-            No third-party trademark owner is responsible for The
-            Duck App, its operation, its content, its virtual items,
-            its purchases, or transactions or interactions occurring
-            through the service.
-          </p>
-        </section>
-
-        <!-- LICENSED CONTENT -->
-
-        <section>
-          <h2>Third-Party and Licensed Content</h2>
-
-          <p>
-            Certain ducks, artwork, brands, promotions, products, or
-            other content may be provided in collaboration with or
-            under license from third parties. Availability of such
-            content may be limited, changed, or discontinued in
-            accordance with applicable agreements, rights, and legal
-            requirements.
-          </p>
-
-          <p>
-            The inclusion of third-party content does not grant users
-            any ownership or other rights in the trademarks,
-            copyrights, or intellectual property of those third
-            parties.
-          </p>
-        </section>
-
-        <!-- THIRD-PARTY SERVICES -->
-
-        <section>
-          <h2>Third-Party Services</h2>
-
-          <p>
-            The app may depend on or interact with third-party
-            platforms, app stores, payment systems, hosting providers,
-            authentication providers, networks, devices, or other
-            services that we do not control.
-          </p>
-
-          <p>
-            To the maximum extent permitted by applicable law, The
-            Duck App is not responsible for the availability,
-            operation, security, terms, policies, or independent
-            actions of third-party services.
-          </p>
-        </section>
-
-        <!-- FEEDBACK -->
-
-        <section>
-          <h2>Feedback</h2>
-
-          <p>
-            If you voluntarily provide ideas, suggestions, comments,
-            or other feedback about the app, you agree that The Duck
-            App may use that feedback to develop, improve, promote,
-            or operate the service without restriction or an
-            obligation to compensate you, subject to applicable law.
-          </p>
-        </section>
-
-        <!-- PRIVACY -->
-
-        <section>
-          <h2>Privacy</h2>
-
-          <p>
-            Our collection, use, storage, and handling of personal
-            information are described in our
-            <a href="privacy.html">Privacy Policy</a>.
-            Please review the Privacy Policy to understand our data
-            practices and your available choices and rights.
-          </p>
-        </section>
-
-        <!-- WARRANTIES -->
-
-        <section>
-          <h2>Disclaimer of Warranties</h2>
-
-          <p>
-            To the maximum extent permitted by applicable law, the
-            app and its services are provided on an "as is" and
-            "as available" basis, without warranties of any kind,
-            whether express, implied, or statutory.
-          </p>
-
-          <p>
-            To the maximum extent permitted by law, The Duck App
-            disclaims implied warranties including merchantability,
-            fitness for a particular purpose, non-infringement, and
-            any warranties arising from course of dealing or usage
-            of trade.
-          </p>
-
-          <p>
-            We do not warrant that the service will always be
-            available, secure, accurate, uninterrupted, error-free,
-            or free from harmful components, or that defects will
-            always be corrected.
-          </p>
-        </section>
-
-        <!-- LIABILITY -->
-
-        <section>
-          <h2>Limitation of Liability</h2>
-
-          <p>
-            To the maximum extent permitted by applicable law, The
-            Duck App and its affiliates, officers, employees,
-            contractors, licensors, and service providers will not be
-            liable for indirect, incidental, special, exemplary,
-            punitive, consequential, or similar damages arising out
-            of or related to your access to, use of, or inability to
-            use the app or service.
-          </p>
-
-          <p>
-            This includes, to the extent permitted by law, loss of
-            data, loss of access, loss of virtual items, loss of
-            goodwill, or other intangible losses. Nothing in these
-            Terms excludes or limits liability that cannot lawfully
-            be excluded or limited.
-          </p>
-        </section>
-
-        <!-- INDEMNIFICATION -->
-
-        <section>
-          <h2>Indemnification</h2>
-
-          <p>
-            To the extent permitted by applicable law, you agree to
-            defend, indemnify, and hold harmless The Duck App and its
-            affiliates, officers, employees, contractors, licensors,
-            and service providers from claims, liabilities, damages,
-            losses, and reasonable costs and expenses arising from or
-            related to your violation of these Terms, your unlawful
-            or abusive use of the service, your infringement of
-            another person's rights, or information or content you
-            submit without appropriate authorization.
-          </p>
-        </section>
-
-        <!-- EVENTS BEYOND CONTROL -->
-
-        <section>
-          <h2>Events Beyond Our Control</h2>
-
-          <p>
-            To the maximum extent permitted by applicable law, The
-            Duck App is not responsible for delays, interruptions, or
-            failures caused by events reasonably beyond our control,
-            including failures of networks, hosting services, app
-            stores, third-party platforms, utilities,
-            telecommunications systems, natural disasters, government
-            actions, labor disputes, widespread outages, or other
-            similar events.
-          </p>
-        </section>
-
-        <!-- CHANGES TO TERMS -->
-
-        <section>
-          <h2>Changes to These Terms</h2>
-
-          <p>
-            We may update these Terms as the app, our business,
-            applicable law, or the services evolve.
-          </p>
-
-          <p>
-            When appropriate, we may provide notice of material
-            changes through the app or by other reasonable means. We
-            may require you to affirmatively accept updated Terms
-            before continuing to use some or all of the service.
-            Continued use after updated Terms become effective may
-            constitute acceptance where permitted by applicable law.
-          </p>
-        </section>
-
-        <!-- SEVERABILITY -->
-
-        <section>
-          <h2>Severability</h2>
-
-          <p>
-            If any provision of these Terms is determined to be
-            invalid, unenforceable, or unlawful, that provision will
-            be enforced to the maximum extent permitted by law, and
-            the remaining provisions will remain in effect.
-          </p>
-        </section>
-
-        <!-- NO WAIVER -->
-
-        <section>
-          <h2>No Waiver</h2>
-
-          <p>
-            Our failure to enforce any provision of these Terms does
-            not waive our right to enforce that provision or any
-            other provision in the future.
-          </p>
-        </section>
-
-        <!-- ASSIGNMENT -->
-
-        <section>
-          <h2>Assignment</h2>
-
-          <p>
-            You may not assign or transfer your rights or obligations
-            under these Terms without our consent. The Duck App may
-            assign or transfer its rights and obligations in
-            connection with a merger, acquisition, reorganization,
-            sale of assets, operation of the service by another
-            entity, or as otherwise permitted by law.
-          </p>
-        </section>
-
-        <!-- ENTIRE AGREEMENT -->
-
-        <section>
-          <h2>Entire Agreement</h2>
-
-          <p>
-            These Terms, together with the Privacy Policy, Purchase
-            Terms, and any other policies or additional terms
-            expressly incorporated into them, constitute the agreement
-            between you and The Duck App governing your use of the
-            service with respect to the matters they address.
-          </p>
-        </section>
-
-        <!-- CONTACT -->
-
-        <section>
-          <h2>Contact</h2>
-
-          <p>
-            Questions about these Terms or the service may be
-            submitted through our
-            <a href="support.html">Contact &amp; Support</a>
-            page.
-          </p>
-
-          <p>
-            Additional business and contact information for The Duck
-            App will be provided before the app is made publicly
-            available.
-          </p>
-        </section>
-
-        <!-- RELATED DOCUMENTS -->
-
-        <div class="legal-related">
-          Please also review our
-          <a href="privacy.html">Privacy Policy</a>
-          and
-          <a href="purchase-terms.html">Purchase Terms</a>.
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
+
+
+&#x20; <div class="background-duck" aria-hidden="true">
+
+&#x20;   <img src="assets/duck_official.svg" alt="" />
+
+&#x20; </div>
+
+
+
+&#x20; <div class="page-gradient" aria-hidden="true"></div>
+
+
+
+&#x20; <div class="page-content">
+
+
+
+&#x20;   <div class="page-heading">
+
+&#x20;     <div>
+
+&#x20;       <p class="eyebrow">LEGAL</p>
+
+&#x20;       <h1>TERMS<br />OF USE.</h1>
+
+&#x20;     </div>
+
+
+
+&#x20;     <p class="updated" id="legal-updated">Loading current version…</p>
+
+&#x20;   </div>
+
+
+
+&#x20;   <div class="document-layout">
+
+
+
+&#x20;     <div aria-hidden="true"></div>
+
+
+
+&#x20;     <article id="legal-content" class="legal-document" aria-live="polite"><p>Loading current legal document…</p></article>
+
+
+
+&#x20;   </div>
+
+
+
+&#x20; </div>
+
+
 
 </main>
 
+
+
 <footer>
-  <div class="footer-inner">
 
-    <div class="copyright">
-      © 2026 Michael Overton. All rights reserved.
-    </div>
+&#x20; <div class="footer-inner">
 
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html" aria-current="page">Terms</a>
-      <a href="purchase-terms.html">Purchase Terms</a>
-    </nav>
 
-  </div>
+
+&#x20;   <div class="copyright">
+
+&#x20;     © 2026 Michael Overton. All rights reserved.
+
+&#x20;   </div>
+
+
+
+&#x20;   <nav class="footer-links" aria-label="Footer navigation">
+
+&#x20;     <a href="support.html">Support</a>
+
+&#x20;     <a href="privacy.html">Privacy</a>
+
+&#x20;     <a href="terms.html" aria-current="page">Terms</a>
+
+&#x20;     <a href="purchase-terms.html">Purchase Terms</a>
+
+&#x20;   </nav>
+
+
+
+&#x20; </div>
+
 </footer>
 
+
+
+<script src="legal-sync.js" defer></script>
 </body>
+
 </html>
