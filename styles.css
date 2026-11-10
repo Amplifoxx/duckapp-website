@@ -17,9 +17,10 @@ html {
 }
 
 body {
-  background: #ffd000;
+  background: #ff0000;
   color: #000;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui,
+             "Segoe UI", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -32,7 +33,7 @@ a {
 /* ---------- GLOBAL ---------- */
 
 :root {
-  --yellow: #ffd000;
+  --yellow: #000000;
   --black: #050505;
   --white: #f7f7f2;
   --gray: #a3a3a3;
@@ -48,64 +49,6 @@ a {
 
 .eyebrow.yellow {
   color: var(--yellow);
-}
-
-
-/* ---------- NAV ---------- */
-
-.nav {
-  position: absolute;
-  z-index: 100;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 28px 42px;
-}
-
-.brand {
-  font-size: 16px;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-}
-
-.nav-links a {
-  position: relative;
-
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.nav-links a::after {
-  content: "";
-
-  position: absolute;
-  left: 0;
-  bottom: -7px;
-
-  width: 0;
-  height: 2px;
-
-  background: #000;
-
-  transition: width 180ms ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
 }
 
 
@@ -173,7 +116,7 @@ a {
   font-weight: 900;
 
   line-height: 0.73;
-  letter-spacing: -0.085em;
+ letter-spacing: -0.045em;
 
   margin-left: -0.065em;
 
@@ -429,28 +372,6 @@ a {
   letter-spacing: 0.12em;
 }
 
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-  display: grid;
-
-  grid-template-columns: 1fr auto;
-
-  grid-template-areas:
-    "brand links"
-    "copyright copyright";
-
-  gap: 60px 30px;
-
-  padding: 70px 8vw 40px;
-
-  background: var(--black);
-  color: var(--white);
-}
-
 .footer-brand {
   grid-area: brand;
 
@@ -460,56 +381,12 @@ footer {
   letter-spacing: -0.055em;
 }
 
-.footer-links {
-  grid-area: links;
-
-  display: flex;
-  align-items: center;
-
-  gap: 28px;
-}
-
-.footer-links a {
-  font-size: 11px;
-  font-weight: 800;
-
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-
-  color: #bcbcbc;
-
-  transition: color 150ms ease;
-}
-
-.footer-links a:hover {
-  color: var(--yellow);
-}
-
-.copyright {
-  grid-area: copyright;
-
-  padding-top: 30px;
-
-  border-top: 1px solid #292929;
-
-  font-size: 10px;
-  font-weight: 600;
-
-  letter-spacing: 0.08em;
-
-  color: #777;
-}
-
 
 /* =========================================================
    TABLET
    ========================================================= */
 
 @media (max-width: 900px) {
-
-  .nav {
-    padding: 24px;
-  }
 
   .hero {
     padding-left: 24px;
@@ -568,11 +445,6 @@ footer {
     padding-left: 24px;
     padding-right: 24px;
   }
-
-  footer {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
 }
 
 
@@ -581,26 +453,6 @@ footer {
    ========================================================= */
 
 @media (max-width: 600px) {
-
-  .nav {
-    padding: 22px 20px;
-  }
-
-  .brand {
-    font-size: 13px;
-  }
-
-  .nav-links {
-    gap: 16px;
-  }
-
-  .nav-links a {
-    font-size: 9px;
-  }
-
-  .nav-links a:nth-child(2) {
-    display: none;
-  }
 
   .hero {
     min-height: 145svh;
@@ -670,26 +522,6 @@ footer {
     padding:
       90px
       20px;
-  }
-
-  footer {
-    grid-template-columns: 1fr;
-
-    grid-template-areas:
-      "brand"
-      "links"
-      "copyright";
-
-    gap: 35px;
-
-    padding:
-      60px
-      20px
-      30px;
-  }
-
-  .footer-links {
-    flex-wrap: wrap;
   }
 }
 

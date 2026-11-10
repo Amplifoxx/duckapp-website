@@ -20,11 +20,11 @@
 
 :root {
 
-&#x20; \--yellow: #ffd000;
+  --yellow: #000000;
 
-&#x20; \--black: #050505;
+  --black: #050505;
 
-&#x20; \--white: #f7f7f2;
+  --white: #f7f7f2;
 
 }
 
@@ -32,11 +32,11 @@
 
 * {
 
-&#x20; box-sizing: border-box;
+  box-sizing: border-box;
 
-&#x20; margin: 0;
+  margin: 0;
 
-&#x20; padding: 0;
+  padding: 0;
 
 }
 
@@ -44,9 +44,9 @@
 
 html {
 
-&#x20; min-height: 100%;
+  min-height: 100%;
 
-&#x20; scroll-behavior: smooth;
+  scroll-behavior: smooth;
 
 }
 
@@ -54,21 +54,22 @@ html {
 
 body {
 
-&#x20; min-height: 100vh;
+  min-height: 100vh;
 
-&#x20; min-height: 100svh;
+  min-height: 100svh;
 
-&#x20; display: flex;
+  display: flex;
 
-&#x20; flex-direction: column;
+  flex-direction: column;
 
-&#x20; background: var(--yellow);
+  background: var(--yellow);
 
-&#x20; color: var(--black);
+  color: var(--black);
 
-&#x20; font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui,
+             "Segoe UI", Arial, sans-serif;
 
-&#x20; -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 
 }
 
@@ -76,117 +77,9 @@ body {
 
 a {
 
-&#x20; color: inherit;
+  color: inherit;
 
-&#x20; text-decoration: none;
-
-}
-
-
-
-/* =========================================================
-
-&#x20;  NAVIGATION
-
-&#x20;  \========================================================= */
-
-
-
-.nav {
-
-&#x20; position: absolute;
-
-&#x20; z-index: 100;
-
-&#x20; top: 0;
-
-&#x20; left: 0;
-
-&#x20; width: 100%;
-
-&#x20; display: flex;
-
-&#x20; align-items: center;
-
-&#x20; justify-content: space-between;
-
-&#x20; padding: 24px 42px;
-
-&#x20; background: transparent;
-
-}
-
-
-
-.brand {
-
-&#x20; font-size: 16px;
-
-&#x20; font-weight: 900;
-
-&#x20; letter-spacing: -.02em;
-
-&#x20; white-space: nowrap;
-
-}
-
-
-
-.nav-links {
-
-&#x20; display: flex;
-
-&#x20; align-items: center;
-
-&#x20; gap: 32px;
-
-}
-
-
-
-.nav-links a {
-
-&#x20; position: relative;
-
-&#x20; font-size: 11px;
-
-&#x20; font-weight: 800;
-
-&#x20; letter-spacing: .12em;
-
-&#x20; text-transform: uppercase;
-
-&#x20; white-space: nowrap;
-
-}
-
-
-
-.nav-links a::after {
-
-&#x20; content: "";
-
-&#x20; position: absolute;
-
-&#x20; left: 0;
-
-&#x20; bottom: -7px;
-
-&#x20; width: 0;
-
-&#x20; height: 2px;
-
-&#x20; background: var(--black);
-
-&#x20; transition: width 180ms ease;
-
-}
-
-
-
-.nav-links a:hover::after {
-
-&#x20; width: 100%;
+  text-decoration: none;
 
 }
 
@@ -194,27 +87,27 @@ a {
 
 /* =========================================================
 
-&#x20;  PAGE
+   PAGE
 
-&#x20;  \========================================================= */
+   \========================================================= */
 
 
 
 main {
 
-&#x20; position: relative;
+  position: relative;
 
-&#x20; flex: 1 0 auto;
+  flex: 1 0 auto;
 
-&#x20; width: 100%;
+  width: 100%;
 
-&#x20; padding: 105px 8vw 75px;
+  padding: 105px 8vw 75px;
 
-&#x20; overflow: hidden;
+  overflow: hidden;
 
-&#x20; isolation: isolate;
+  isolation: isolate;
 
-&#x20; background: var(--yellow);
+  background: var(--yellow);
 
 }
 
@@ -222,23 +115,23 @@ main {
 
 .background-duck {
 
-&#x20; position: absolute;
+  position: absolute;
 
-&#x20; z-index: 0;
+  z-index: 2;
 
-&#x20; top: -100px;
+  top: -100px;
 
-&#x20; left: 0;
+  left: 0;
 
-&#x20; width: max(80vw, 1100px);
+  width: max(80vw, 1100px);
 
-&#x20; transform: translate(-96%, -11%) rotate(-8deg);
+  transform: translate(-96%, -11%) rotate(-8deg);
 
-&#x20; opacity: .06;
+  opacity: .06;
 
-&#x20; pointer-events: none;
+  pointer-events: none;
 
-&#x20; user-select: none;
+  user-select: none;
 
 }
 
@@ -246,11 +139,11 @@ main {
 
 .background-duck img {
 
-&#x20; display: block;
+  display: block;
 
-&#x20; width: 200%;
+  width: 200%;
 
-&#x20; height: auto;
+  height: auto;
 
 }
 
@@ -258,45 +151,31 @@ main {
 
 .page-gradient {
 
-&#x20; position: absolute;
-
-&#x20; z-index: 1;
-
-&#x20; inset: 0;
-
-&#x20; background: linear-gradient(
-
-&#x20;   to left,
-
-&#x20;   rgba(105,72,0,.30) 0%,
-
-&#x20;   rgba(105,72,0,.15) 25%,
-
-&#x20;   rgba(105,72,0,0) 50%,
-
-&#x20;   rgba(105,72,0,.05) 75%,
-
-&#x20;   rgba(105,72,0,.10) 100%
-
-&#x20; );
-
-&#x20; pointer-events: none;
-
-}
+  position: absolute;
+      z-index: 1;
+      inset: 0;
+      background: linear-gradient(
+        to left,
+        rgba(236, 161, 0, 1.0) 0%,
+        rgb(255, 196, 0) 50%,
+        rgb(210, 157, 0) 100%
+      );
+      pointer-events: none;
+    }
 
 
 
 .page-content {
 
-&#x20; position: relative;
+  position: relative;
 
-&#x20; z-index: 2;
+  z-index: 2;
 
-&#x20; width: 100%;
+  width: 100%;
 
-&#x20; max-width: 1600px;
+  max-width: 1600px;
 
-&#x20; margin: 0 auto;
+  margin: 0 auto;
 
 }
 
@@ -304,13 +183,13 @@ main {
 
 .eyebrow {
 
-&#x20; font-size: 11px;
+  font-size: 11px;
 
-&#x20; font-weight: 900;
+  font-weight: 900;
 
-&#x20; letter-spacing: .18em;
+  letter-spacing: .18em;
 
-&#x20; text-transform: uppercase;
+  text-transform: uppercase;
 
 }
 
@@ -318,23 +197,23 @@ main {
 
 /* =========================================================
 
-&#x20;  HERO
+   HERO
 
-&#x20;  \========================================================= */
+   \========================================================= */
 
 
 
 .page-heading {
 
-&#x20; display: flex;
+  display: flex;
 
-&#x20; align-items: flex-end;
+  align-items: flex-end;
 
-&#x20; justify-content: space-between;
+  justify-content: space-between;
 
-&#x20; gap: 32px;
+  gap: 32px;
 
-&#x20; margin-bottom: 54px;
+  margin-bottom: 54px;
 
 }
 
@@ -342,7 +221,7 @@ main {
 
 .page-heading .eyebrow {
 
-&#x20; margin-bottom: 12px;
+  margin-bottom: 12px;
 
 }
 
@@ -350,17 +229,17 @@ main {
 
 .page-heading h1 {
 
-&#x20; font-size: clamp(50px, 5.2vw, 90px);
+  font-size: clamp(50px, 5.2vw, 90px);
 
-&#x20; font-weight: 900;
+  font-weight: 900;
 
-&#x20; line-height: .88;
+  line-height: .88;
 
-&#x20; letter-spacing: -.085em;
+  letter-spacing: -0.045em;
 
-&#x20; margin-left: -.065em;
+  margin-left: -.065em;
 
-&#x20; text-transform: uppercase;
+  text-transform: uppercase;
 
 }
 
@@ -368,13 +247,13 @@ main {
 
 .updated {
 
-&#x20; font-size: 11px;
+  font-size: 11px;
 
-&#x20; font-weight: 700;
+  font-weight: 700;
 
-&#x20; white-space: nowrap;
+  white-space: nowrap;
 
-&#x20; padding-bottom: 4px;
+  padding-bottom: 4px;
 
 }
 
@@ -382,19 +261,19 @@ main {
 
 /* =========================================================
 
-&#x20;  CONTINUOUS LEGAL DOCUMENT
+   CONTINUOUS LEGAL DOCUMENT
 
-&#x20;  \========================================================= */
+   \========================================================= */
 
 
 
 .document-layout {
 
-&#x20; display: grid;
+  display: grid;
 
-&#x20; grid-template-columns: minmax(0, 1fr) minmax(0, 850px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 850px);
 
-&#x20; gap: clamp(35px, 6vw, 110px);
+  gap: clamp(35px, 6vw, 110px);
 
 }
 
@@ -402,13 +281,13 @@ main {
 
 .legal-document {
 
-&#x20; min-width: 0;
+  min-width: 0;
 
-&#x20; font-size: 13px;
+  font-size: 13px;
 
-&#x20; font-weight: 500;
+  font-weight: 500;
 
-&#x20; line-height: 1.8;
+  line-height: 1.8;
 
 }
 
@@ -416,11 +295,11 @@ main {
 
 .legal-document section {
 
-&#x20; padding: 0 0 26px;
+  padding: 0 0 26px;
 
-&#x20; margin-bottom: 27px;
+  margin-bottom: 27px;
 
-&#x20; border-bottom: 1px solid rgba(0,0,0,.22);
+  border-bottom: 1px solid rgba(0,0,0,.22);
 
 }
 
@@ -428,9 +307,9 @@ main {
 
 .legal-document section:first-child {
 
-&#x20; padding-bottom: 32px;
+  padding-bottom: 32px;
 
-&#x20; border-bottom: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
 
 }
 
@@ -438,11 +317,11 @@ main {
 
 .legal-document section:first-child p {
 
-&#x20; font-size: 15px;
+  font-size: 15px;
 
-&#x20; font-weight: 700;
+  font-weight: 700;
 
-&#x20; line-height: 1.7;
+  line-height: 1.7;
 
 }
 
@@ -450,17 +329,17 @@ main {
 
 .legal-document h2 {
 
-&#x20; margin-bottom: 13px;
+  margin-bottom: 13px;
 
-&#x20; font-size: clamp(18px, 1.65vw, 24px);
+  font-size: clamp(18px, 1.65vw, 24px);
 
-&#x20; font-weight: 900;
+  font-weight: 900;
 
-&#x20; line-height: 1.15;
+  line-height: 1.15;
 
-&#x20; letter-spacing: -.045em;
+  letter-spacing: -.045em;
 
-&#x20; text-transform: uppercase;
+  text-transform: uppercase;
 
 }
 
@@ -468,7 +347,7 @@ main {
 
 .legal-document p + p {
 
-&#x20; margin-top: 14px;
+  margin-top: 14px;
 
 }
 
@@ -476,11 +355,11 @@ main {
 
 .legal-document a {
 
-&#x20; font-weight: 800;
+  font-weight: 800;
 
-&#x20; text-decoration: underline;
+  text-decoration: underline;
 
-&#x20; text-underline-offset: 3px;
+  text-underline-offset: 3px;
 
 }
 
@@ -488,7 +367,7 @@ main {
 
 .legal-document a:hover {
 
-&#x20; text-decoration-thickness: 2px;
+  text-decoration-thickness: 2px;
 
 }
 
@@ -496,13 +375,13 @@ main {
 
 .legal-related {
 
-&#x20; padding-top: 5px;
+  padding-top: 5px;
 
-&#x20; font-size: 12px;
+  font-size: 12px;
 
-&#x20; font-weight: 600;
+  font-weight: 600;
 
-&#x20; line-height: 1.7;
+  line-height: 1.7;
 
 }
 
@@ -510,163 +389,31 @@ main {
 
 /* =========================================================
 
-&#x20;  FOOTER
+   TABLET
 
-&#x20;  \========================================================= */
-
-
-
-footer {
-
-&#x20; position: relative;
-
-&#x20; z-index: 10;
-
-&#x20; flex: 0 0 auto;
-
-&#x20; width: 100%;
-
-&#x20; margin-top: auto;
-
-&#x20; padding: 20px 8vw;
-
-&#x20; background: var(--black);
-
-&#x20; color: var(--white);
-
-}
-
-
-
-.footer-inner {
-
-&#x20; display: flex;
-
-&#x20; align-items: center;
-
-&#x20; justify-content: space-between;
-
-&#x20; flex-wrap: nowrap;
-
-&#x20; gap: 24px;
-
-}
-
-
-
-.copyright {
-
-&#x20; flex: 0 0 auto;
-
-&#x20; font-size: 10px;
-
-&#x20; font-weight: 600;
-
-&#x20; letter-spacing: .03em;
-
-&#x20; color: #777;
-
-&#x20; white-space: nowrap;
-
-}
-
-
-
-.footer-links {
-
-&#x20; display: flex;
-
-&#x20; align-items: center;
-
-&#x20; justify-content: flex-end;
-
-&#x20; flex-wrap: nowrap;
-
-&#x20; gap: 28px;
-
-&#x20; white-space: nowrap;
-
-}
-
-
-
-.footer-links a {
-
-&#x20; font-size: 10px;
-
-&#x20; font-weight: 800;
-
-&#x20; letter-spacing: .1em;
-
-&#x20; text-transform: uppercase;
-
-&#x20; color: #bcbcbc;
-
-&#x20; white-space: nowrap;
-
-}
-
-
-
-.footer-links a:hover {
-
-&#x20; color: var(--yellow);
-
-}
-
-
-
-/* =========================================================
-
-&#x20;  TABLET
-
-&#x20;  \========================================================= */
+   \========================================================= */
 
 
 
 @media (max-width: 1000px) {
 
-&#x20; .nav {
-
-&#x20;   padding: 24px;
-
-&#x20; }
 
 
+  main {
 
-&#x20; main {
+    padding: 105px 24px 55px;
 
-&#x20;   padding: 105px 24px 55px;
-
-&#x20; }
+  }
 
 
 
-&#x20; .document-layout {
+  .document-layout {
 
-&#x20;   grid-template-columns: minmax(0, 1fr) minmax(0, 750px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 750px);
 
-&#x20;   gap: 30px;
+    gap: 30px;
 
-&#x20; }
-
-
-
-&#x20; footer {
-
-&#x20;   padding-left: 24px;
-
-&#x20;   padding-right: 24px;
-
-&#x20; }
-
-
-
-&#x20; .footer-links {
-
-&#x20;   gap: 18px;
-
-&#x20; }
+  }
 
 }
 
@@ -674,211 +421,91 @@ footer {
 
 /* =========================================================
 
-&#x20;  MOBILE
+   MOBILE
 
-&#x20;  \========================================================= */
+   \========================================================= */
 
 
 
 @media (max-width: 600px) {
 
-&#x20; .nav {
 
-&#x20;   padding: 22px 20px;
 
-&#x20; }
+  main {
 
+    padding: 100px 20px 45px;
 
+  }
 
-&#x20; .brand {
 
-&#x20;   font-size: 13px;
 
-&#x20; }
+  .page-heading {
 
+    display: block;
 
+    margin-bottom: 38px;
 
-&#x20; .nav-links {
+  }
 
-&#x20;   gap: 16px;
 
-&#x20; }
 
+  .page-heading h1 {
 
+    font-size: clamp(48px, 11vw, 70px);
 
-&#x20; .nav-links a {
+  }
 
-&#x20;   font-size: 9px;
 
-&#x20; }
 
+  .updated {
 
+    margin-top: 16px;
 
-&#x20; main {
+  }
 
-&#x20;   padding: 100px 20px 45px;
 
-&#x20; }
 
+  .document-layout {
 
+    display: block;
 
-&#x20; .page-heading {
+  }
 
-&#x20;   display: block;
 
-&#x20;   margin-bottom: 38px;
 
-&#x20; }
+  .legal-document {
 
+    font-size: 12px;
 
+    line-height: 1.75;
 
-&#x20; .page-heading h1 {
+  }
 
-&#x20;   font-size: clamp(48px, 11vw, 70px);
 
-&#x20; }
 
+  .legal-document section {
 
+    padding-bottom: 24px;
 
-&#x20; .updated {
+    margin-bottom: 25px;
 
-&#x20;   margin-top: 16px;
+  }
 
-&#x20; }
 
 
+  .legal-document section:first-child p {
 
-&#x20; .document-layout {
+    font-size: 13px;
 
-&#x20;   display: block;
+  }
 
-&#x20; }
 
 
+  .legal-document h2 {
 
-&#x20; .legal-document {
+    font-size: 19px;
 
-&#x20;   font-size: 12px;
-
-&#x20;   line-height: 1.75;
-
-&#x20; }
-
-
-
-&#x20; .legal-document section {
-
-&#x20;   padding-bottom: 24px;
-
-&#x20;   margin-bottom: 25px;
-
-&#x20; }
-
-
-
-&#x20; .legal-document section:first-child p {
-
-&#x20;   font-size: 13px;
-
-&#x20; }
-
-
-
-&#x20; .legal-document h2 {
-
-&#x20;   font-size: 19px;
-
-&#x20; }
-
-
-
-&#x20; /* MOBILE FOOTER — WRAPPING LINKS */
-
-
-
-&#x20; footer {
-
-&#x20;   width: 100%;
-
-&#x20;   padding:
-
-&#x20;     22px max(16px, env(safe-area-inset-right))
-
-&#x20;     max(22px, env(safe-area-inset-bottom))
-
-&#x20;     max(16px, env(safe-area-inset-left));
-
-&#x20;   overflow: hidden;
-
-&#x20; }
-
-
-
-&#x20; .footer-inner {
-
-&#x20;   display: flex;
-
-&#x20;   flex-direction: column-reverse;
-
-&#x20;   align-items: center;
-
-&#x20;   justify-content: center;
-
-&#x20;   width: 100%;
-
-&#x20;   min-width: 0;
-
-&#x20;   gap: 18px;
-
-&#x20; }
-
-
-
-&#x20; .footer-links {
-
-&#x20;   display: flex;
-
-&#x20;   flex-direction: row;
-
-&#x20;   align-items: center;
-
-&#x20;   justify-content: center;
-
-&#x20;   flex-wrap: wrap;
-
-&#x20;   width: 100%;
-
-&#x20;   gap: 12px 20px;
-
-&#x20;   white-space: normal;
-
-&#x20; }
-
-
-
-&#x20; .footer-links a {
-
-&#x20;   flex-shrink: 0;
-
-&#x20;   font-size: 9px;
-
-&#x20;   white-space: nowrap;
-
-&#x20; }
-
-
-
-&#x20; .copyright {
-
-&#x20;   flex: 0 1 auto;
-
-&#x20;   font-size: 9px;
-
-&#x20;   text-align: center;
-
-&#x20;   white-space: normal;
-
-&#x20; }
+  }
 
 }
 
@@ -886,138 +513,133 @@ footer {
 
 /* =========================================================
 
-&#x20;  PRINT / SAVE AS PDF
+   PRINT / SAVE AS PDF
 
-&#x20;  \========================================================= */
+   \========================================================= */
 
 
 
 @media print {
 
-&#x20; @page {
+  @page {
 
-&#x20;   margin: 18mm;
+    margin: 18mm;
 
-&#x20; }
+  }
 
 
 
-&#x20; html,
+  html,
 
-&#x20; body {
+  body {
 
-&#x20;   display: block;
+    display: block;
 
-&#x20;   min-height: 0;
+    min-height: 0;
 
-&#x20;   background: white !important;
+    background: white !important;
 
-&#x20;   color: black !important;
+    color: black !important;
 
-&#x20; }
+  }
+.background-duck,
+.page-gradient {
 
+    display: none !important;
 
+  }
 
-&#x20; .nav,
 
-&#x20; .background-duck,
 
-&#x20; .page-gradient,
+  main {
 
-&#x20; footer {
+    padding: 0 !important;
 
-&#x20;   display: none !important;
+    overflow: visible !important;
 
-&#x20; }
+    background: white !important;
 
+  }
 
 
-&#x20; main {
 
-&#x20;   padding: 0 !important;
+  .page-content {
 
-&#x20;   overflow: visible !important;
+    max-width: none;
 
-&#x20;   background: white !important;
+  }
 
-&#x20; }
 
 
+  .page-heading {
 
-&#x20; .page-content {
+    margin-bottom: 25px;
 
-&#x20;   max-width: none;
+  }
 
-&#x20; }
 
 
+  .page-heading h1 {
 
-&#x20; .page-heading {
+    font-size: 38pt;
 
-&#x20;   margin-bottom: 25px;
+  }
 
-&#x20; }
 
 
+  .document-layout {
 
-&#x20; .page-heading h1 {
+    display: block;
 
-&#x20;   font-size: 38pt;
+  }
 
-&#x20; }
 
 
+  .legal-document {
 
-&#x20; .document-layout {
+    font-size: 10pt;
 
-&#x20;   display: block;
+    line-height: 1.5;
 
-&#x20; }
+  }
 
 
 
-&#x20; .legal-document {
+  .legal-document section {
 
-&#x20;   font-size: 10pt;
+    break-inside: auto;
 
-&#x20;   line-height: 1.5;
+  }
 
-&#x20; }
 
 
+  .legal-document h2 {
 
-&#x20; .legal-document section {
+    font-size: 13pt;
 
-&#x20;   break-inside: auto;
+    break-after: avoid;
 
-&#x20; }
+    page-break-after: avoid;
 
+  }
 
 
-&#x20; .legal-document h2 {
 
-&#x20;   font-size: 13pt;
+  .legal-document p {
 
-&#x20;   break-after: avoid;
+    orphans: 3;
 
-&#x20;   page-break-after: avoid;
+    widows: 3;
 
-&#x20; }
-
-
-
-&#x20; .legal-document p {
-
-&#x20;   orphans: 3;
-
-&#x20;   widows: 3;
-
-&#x20; }
+  }
 
 }
 
 </style>
 
+  <link rel="stylesheet" href="/components/header.css" />
+  <link rel="stylesheet" href="/components/footer.css" />
+  <script src="/components/site-components.js" defer></script>
 </head>
 
 
@@ -1026,20 +648,14 @@ footer {
 
 
 
-<header class="nav">
-
-&#x20; <a href="index.html" class="brand">THE DUCK APP</a>
-
-
-
-&#x20; <nav class="nav-links">
-
-&#x20;   <a href="index.html">Home</a>
-
-&#x20;   <a href="support.html">Support</a>
-
-&#x20; </nav>
-
+<header class="site-header" data-site-component="header">
+  <a href="/" class="site-brand">
+    <span>The Duck App</span>
+    <img src="/assets/duck_official.svg" width="32" height="29" alt="" aria-hidden="true" />
+  </a>
+  <nav class="site-header-links" aria-label="Main navigation">
+    <a href="/support.html">Support</a>
+  </nav>
 </header>
 
 
@@ -1048,57 +664,57 @@ footer {
 
 
 
-&#x20; <div class="background-duck" aria-hidden="true">
+  <div class="background-duck" aria-hidden="true">
 
-&#x20;   <img src="assets/duck_official.svg" alt="" />
+    <img src="assets/duck_official.svg" alt="" />
 
-&#x20; </div>
-
-
-
-&#x20; <div class="page-gradient" aria-hidden="true"></div>
+  </div>
 
 
 
-&#x20; <div class="page-content">
+  <div class="page-gradient" aria-hidden="true"></div>
 
 
 
-&#x20;   <div class="page-heading">
-
-&#x20;     <div>
-
-&#x20;       <p class="eyebrow">LEGAL</p>
-
-&#x20;       <h1>PURCHASE<br />TERMS.</h1>
-
-&#x20;     </div>
+  <div class="page-content">
 
 
 
-&#x20;     <p class="updated" id="legal-updated">Loading current version…</p>
+    <div class="page-heading">
 
-&#x20;   </div>
+      <div>
 
+        <p class="eyebrow">LEGAL</p>
 
+        <h1>PURCHASE<br />TERMS.</h1>
 
-&#x20;   <div class="document-layout">
-
-
-
-&#x20;     <div aria-hidden="true"></div>
+      </div>
 
 
 
-&#x20;     <article id="legal-content" class="legal-document" aria-live="polite"><p>Loading current legal document…</p></article>
+      <p class="updated" id="legal-updated">Loading current version…</p>
+
+    </div>
 
 
 
-&#x20;   </div>
+    <div class="document-layout">
 
 
 
-&#x20; </div>
+      <div aria-hidden="true"></div>
+
+
+
+      <article id="legal-content" class="legal-document" aria-live="polite"><p>Loading current legal document…</p></article>
+
+
+
+    </div>
+
+
+
+  </div>
 
 
 
@@ -1106,36 +722,16 @@ footer {
 
 
 
-<footer>
-
-&#x20; <div class="footer-inner">
-
-
-
-&#x20;   <div class="copyright">
-
-&#x20;     © 2026 Michael Overton. All rights reserved.
-
-&#x20;   </div>
-
-
-
-&#x20;   <nav class="footer-links" aria-label="Footer navigation">
-
-&#x20;     <a href="support.html">Support</a>
-
-&#x20;     <a href="privacy.html">Privacy</a>
-
-&#x20;     <a href="terms.html">Terms</a>
-
-&#x20;     <a href="purchase-terms.html" aria-current="page">Purchase Terms</a>
-
-&#x20;   </nav>
-
-
-
-&#x20; </div>
-
+<footer class="site-footer" data-site-component="footer">
+  <div class="footer-inner">
+    <div class="copyright">© 2026 Michael Overton. All rights reserved.</div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/purchase-terms.html" aria-current="page">Purchase Terms</a>
+    </nav>
+  </div>
 </footer>
 
 

@@ -1,0 +1,65 @@
+/* Universal header: text followed by the original duck SVG. */
+.site-header {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px 42px;
+  color: #050505;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.site-header .site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0px;
+  flex-shrink: 0;
+  color: inherit;
+  font-size: 16px;
+  font-weight: 1000;
+  letter-spacing: -.05em;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-header .site-brand img {
+  display: block;
+  width: 32px;
+  height: 29px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.site-header .site-header-links { display: flex; align-items: center; gap: 24px; }
+.site-header .site-header-links a {
+  color: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 6px 0;
+}
+.site-header .site-header-links a:hover,
+.site-header .site-header-links a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+.site-header a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+@media (max-width: 768px) {
+  .site-header {
+    padding: 22px max(20px, env(safe-area-inset-right)) 22px max(20px, env(safe-area-inset-left));
+    gap: 12px;
+  }
+  .site-header .site-brand { font-size: 14px; gap: 7px; }
+  .site-header .site-brand img { width: 28px; height: 25px; }
+  .site-header .site-header-links a { font-size: 10px; }
+}
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 970px) {
+  .site-header { padding-top: 18px; padding-bottom: 18px; }
+}
+@media print { .site-header { display: none; } }
